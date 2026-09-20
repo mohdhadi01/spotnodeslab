@@ -18,7 +18,8 @@
     "eyebrow": "Software Engineering Studio",
     "location": "India → Working worldwide",
     "headline": [
-      [{ "t": "We design & engineer" }],
+      [{ "t": "We design &" }],
+      [{ "t": "engineer" }],
       [{ "t": "software that " }, { "t": "performs", "serif": true }, { "t": "." }]
     ],
     "sub": "From web platforms to Android apps and Web3 products — we take ideas from first sketch to production, with quality you can measure and a team that treats your product like its own.",
