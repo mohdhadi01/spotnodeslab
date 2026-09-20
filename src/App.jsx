@@ -1,28 +1,36 @@
-import { Layout } from './components/layout/Layout';
-import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
-import { Hero } from './components/sections/Hero';
-import { About } from './components/sections/About';
-import { Services } from './components/sections/Services';
-import { Projects } from './components/sections/Projects';
-import { Stats } from './components/sections/Stats';
-import { Contact } from './components/sections/Contact';
+import React, { useEffect, useState } from "react";
+import { Layout } from "./components/layout/Layout";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+import { Preloader } from "./components/ui/Preloader";
+import { Hero } from "./components/sections/Hero";
+import { Work } from "./components/sections/Work";
+import { Services } from "./components/sections/Services";
+import { Process } from "./components/sections/Process";
+import { Studio } from "./components/sections/Studio";
+import { Contact } from "./components/sections/Contact";
+import data from "./data/site.json";
 
-function App() {
+export default function App() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    document.title = data.seo.title;
+  }, []);
+
   return (
     <Layout>
+      <Preloader onDone={() => setReady(true)} />
       <Header />
       <main>
-        <Hero />
-        <About />
+        <Hero ready={ready} />
+        <Work />
         <Services />
-        <Projects />
-        <Stats />
+        <Process />
+        <Studio />
         <Contact />
       </main>
       <Footer />
     </Layout>
   );
 }
-
-export default App;

@@ -10,7 +10,7 @@ export default defineConfig([
     files: ['**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
-      reactHooks.configs.flat.recommended,
+      reactHooks.configs["flat/recommended"],
       reactRefresh.configs.vite,
     ],
     languageOptions: {
@@ -23,7 +23,9 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // No eslint-plugin-react here, so JSX-only usage (<Foo/>, <motion.div/>) is
+      // invisible to no-unused-vars — ignore capitalized components and `motion`.
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]|^motion$' }],
     },
   },
 ])

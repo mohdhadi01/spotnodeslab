@@ -1,119 +1,156 @@
-import React, { useState, useEffect } from 'react';
-import { MagneticButton } from '../ui/MagneticButton';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ThemeToggle } from '../ui/ThemeToggle';
-import spotnodesLogo from '../../assets/spotnodeslogo.png';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import data from "../../data/site.json";
+import { LogoMark } from "../ui/LogoMark";
+import { Magnetic } from "../ui/Magnetic";
+import { EASE } from "../../lib/motion";
+import { useScrollTo } from "../../lib/useScrollTo";
 
-export const Header = () => {
+export function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const scrollTo = useScrollTo();
+
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const prev = scrollY.getPrevious() ?? 0;
+    setScrolled(y > 24);
+    setHidden(y > 160 && y > prev && !open);
+  });
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    document.documentElement.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.documentElement.style.overflow = "";
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [open]);
 
-  const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Work', href: '#projects' },
-    { name: 'Team', href: '#about' }
-  ];
-
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    setMobileMenuOpen(false);
+  const go = (href) => {
+    setOpen(false);
+    setTimeout(() => scrollTo(href), open ? 350 : 0);
   };
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'py-4 bg-surface-lowest/80 backdrop-blur-xl border-b border-white/5' : 'py-6 bg-transparent'
+      <motion.header
+        animate={{ y: hidden ? "-100%" : "0%" }}
+        transition={{ duration: 0.45, ease: EASE }}
+        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
+          scrolled
+            ? "border-b border-line bg-bg/80 backdrop-blur-xl shadow-[0_1px_12px_rgba(16,19,25,0.04)]"
+            : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          
-          {/* Logo */}
-          <div 
-             className="flex items-center gap-3 z-50 cursor-pointer group"
-             onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+        <div className="container-x flex h-16 items-center justify-between md:h-[68px]">
+          <button
+            onClick={() => go("#top")}
+            className="group flex items-center gap-2.5"
+            aria-label="SpotNodes — back to top"
           >
-             <motion.div
-               whileHover={{ rotate: 180, scale: 1.2 }}
-               whileTap={{ scale: 0.9 }}
-               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-             >
-               <img src={spotnodesLogo} alt="Spotnodes Logo" className="w-8 h-8 object-contain drop-shadow-md" />
-             </motion.div>
-             <span className="text-[var(--text-main)] transition-colors duration-500 font-manrope font-bold text-xl md:text-2xl tracking-tight group-hover:text-primary">Spotnodes Lab</span>
-          </div>
+            <LogoMark className="h-5 w-5 text-ink transition-transform duration-500 group-hover:rotate-90" />
+            <span className="font-display text-lg font-medium tracking-tight text-ink">
+              {data.brand.name}
+            </span>
+          </button>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href}
-                className="text-[var(--text-main)]/70 hover:text-[var(--text-main)] text-sm font-medium transition-colors duration-300 relative group"
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-8 md:flex">
+            {data.nav.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => go(item.href)}
+                className="u-underline text-sm font-medium text-muted transition-colors duration-300 hover:text-ink"
               >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-secondary group-hover:w-full transition-all duration-300 ease-out" />
-              </a>
+                {item.label}
+              </button>
             ))}
-            <ThemeToggle />
-            <div onClick={scrollToContact} className="cursor-pointer">
-              <MagneticButton className="px-6 py-2.5 text-sm">
-                Let's Talk
-              </MagneticButton>
-            </div>
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden z-50 flex items-center gap-4">
-            <ThemeToggle />
-            <button 
-              className="text-[var(--text-main)] p-2 transition-colors duration-500"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          <div className="flex items-center gap-3">
+            <Magnetic className="hidden md:inline-block">
+              <button
+                onClick={() => go("#contact")}
+                className="group flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-white transition-colors duration-300 hover:bg-accent-strong"
+              >
+                Start a project
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
+              </button>
+            </Magnetic>
+
+            {/* Burger */}
+            <button
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              className="relative flex h-10 w-10 items-center justify-center md:hidden"
             >
-              {mobileMenuOpen ? <X /> : <Menu />}
+              <span
+                className={`absolute h-px w-5 bg-ink transition-all duration-300 ${
+                  open ? "rotate-45" : "-translate-y-1"
+                }`}
+              />
+              <span
+                className={`absolute h-px w-5 bg-ink transition-all duration-300 ${
+                  open ? "-rotate-45" : "translate-y-1"
+                }`}
+              />
             </button>
           </div>
         </div>
-      </header>
+      </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile overlay */}
       <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-surface-lowest/95 backdrop-blur-xl pt-32 px-6 pb-6 flex flex-col items-center justify-center md:hidden"
+        {open && (
+          <motion.div
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            animate={{ clipPath: "inset(0 0 0% 0)" }}
+            exit={{ clipPath: "inset(0 0 100% 0)" }}
+            transition={{ duration: 0.55, ease: EASE }}
+            className="fixed inset-0 z-[95] flex flex-col justify-between bg-surface px-6 pb-10 pt-28 md:hidden"
           >
-            <nav className="flex flex-col items-center gap-8 mb-12">
-              {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href}
-                  className="text-2xl font-manrope font-bold text-[var(--text-main)] transition-colors duration-500"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+            <nav className="flex flex-col">
+              {data.nav.map((item, i) => (
+                <div key={item.label} className="overflow-hidden border-b border-line">
+                  <motion.button
+                    initial={{ y: "110%" }}
+                    animate={{ y: "0%" }}
+                    exit={{ y: "110%" }}
+                    transition={{ duration: 0.55, delay: 0.12 + i * 0.06, ease: EASE }}
+                    onClick={() => go(item.href)}
+                    className="flex w-full items-baseline justify-between py-4 text-left"
+                  >
+                    <span className="font-display text-3xl font-medium tracking-tight text-ink">
+                      {item.label}
+                    </span>
+                    <span className="font-mono text-xs text-faint">0{i + 1}</span>
+                  </motion.button>
+                </div>
               ))}
             </nav>
-            <div onClick={scrollToContact} className="w-full max-w-sm mt-4">
-              <MagneticButton className="px-8 py-4 text-lg w-full">
-                Start Project
-              </MagneticButton>
-            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.4, duration: 0.5, ease: EASE }}
+              className="flex flex-col gap-4"
+            >
+              <p className="flex items-center gap-2 text-sm text-muted">
+                <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-accent" />
+                {data.hero.availability}
+              </p>
+              <button
+                onClick={() => go("#contact")}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-accent py-4 text-base font-bold text-white"
+              >
+                Start a project <ArrowUpRight className="h-4 w-4" />
+              </button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
   );
-};
+}

@@ -1,107 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap');
 @import "tailwindcss";
 
+/* ————————————————————————————————————————
+   SpotNodes Design System — light, classic, professional.
+   Warm off-white canvas · white surfaces · ink text
+   · one confident blue. Display: Clash Display
+   · Body: Satoshi · Labels: JetBrains Mono.
+———————————————————————————————————————— */
+
 @theme {
-  --color-surface-lowest: var(--theme-surface-lowest);
-  --color-surface: var(--theme-surface);
-  --color-surface-low: var(--theme-surface-low);
-  --color-surface-high: var(--theme-surface-high);
-  --color-primary: var(--theme-primary);
-  --color-primary-container: var(--theme-primary-container);
-  --color-secondary: var(--theme-secondary);
-  --color-secondary-container: var(--theme-secondary-container);
-  --color-secondary-fixed: var(--theme-secondary-fixed);
-  --color-surface-variant: var(--theme-surface-variant);
-  --color-outline-variant: var(--theme-outline-variant);
-  --color-white: var(--text-main);
-  
-  --font-manrope: "Manrope", sans-serif;
-  --font-inter: "Inter", sans-serif;
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f2f0;
+  --color-ink: #101319;
+  --color-muted: #565e6b;
+  --color-faint: #8b93a1;
+  --color-line: rgba(16, 19, 25, 0.09);
+  --color-line-strong: rgba(16, 19, 25, 0.18);
+  --color-accent: #2e6bff;
+  --color-accent-strong: #1f55e0;
+  --color-accent-soft: rgba(46, 107, 255, 0.08);
+
+  --font-display: "Clash Display", "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  --shadow-card: 0 1px 2px rgba(16, 19, 25, 0.04), 0 8px 24px -8px rgba(16, 19, 25, 0.08);
+  --shadow-card-lg: 0 2px 4px rgba(16, 19, 25, 0.05), 0 24px 48px -16px rgba(16, 19, 25, 0.16);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   :root {
-    color-scheme: dark;
-    --theme-surface-lowest: #0e0e10;
-    --theme-surface: #131315;
-    --theme-surface-low: #1c1b1e;
-    --theme-surface-high: #353437;
-    --theme-primary: #d0bcff;
-    --theme-primary-container: #a078ff;
-    --theme-secondary: #4cd7f6;
-    --theme-secondary-container: #03b5d3;
-    --theme-secondary-fixed: #acedff;
-    --theme-surface-variant: rgba(255, 255, 255, 0.4);
-    --theme-outline-variant: rgba(73, 68, 84, 0.15);
-    --text-main: #ffffff;
-    --glass-border: rgba(255, 255, 255, 0.1);
+    color-scheme: light;
   }
 
-  :root.light {
-    color-scheme: light;
-    --theme-surface-lowest: #f8fafc;
-    --theme-surface: #f1f5f9;
-    --theme-surface-low: #e2e8f0;
-    --theme-surface-high: #cbd5e1;
-    --theme-primary: #6366f1; /* Indigo */
-    --theme-primary-container: #4f46e5;
-    --theme-secondary: #0ea5e9; /* Sky */
-    --theme-secondary-container: #0284c7;
-    --theme-secondary-fixed: #0284c7;
-    --theme-surface-variant: rgba(15, 23, 42, 0.65);
-    --theme-outline-variant: rgba(15, 23, 42, 0.2);
-    --text-main: #0f172a;
-    --glass-border: rgba(15, 23, 42, 0.08);
+  * {
+    border-color: var(--color-line);
   }
 
   body {
-    @apply bg-surface-lowest text-[var(--text-main)] font-inter antialiased overflow-x-hidden selection:bg-primary-container selection:text-white transition-colors duration-500 ease-in-out;
+    @apply bg-bg text-ink font-sans antialiased overflow-x-hidden;
+    text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-manrope tracking-tight;
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-medium;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d3d6db;
+    border-radius: 8px;
+    border: 3px solid var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c0c4ca;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1280px] px-5 md:px-8 lg:px-12;
+  }
+
+  /* Type scale — sized for comfortable reading, not poster walls */
+  .text-display {
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+  }
+  .text-h2 {
+    font-size: clamp(1.9rem, 3.4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.018em;
+  }
+  .text-h3 {
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .text-lead {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+  }
+
+  .serif-accent {
+    @apply font-serif italic font-normal;
+    letter-spacing: -0.01em;
+  }
+
+  .label-mono {
+    @apply font-mono uppercase;
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    color: var(--color-faint);
+  }
+
+  .u-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-out-expo);
+    padding-bottom: 2px;
+  }
+  .u-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(circle, rgba(16, 19, 25, 0.16) 1px, transparent 1.4px);
+    background-size: 24px 24px;
+  }
+
+  .frame {
+    @apply relative overflow-hidden rounded-xl bg-surface;
+    border: 1px solid var(--color-line);
+    box-shadow: var(--shadow-card);
   }
 }
 
 @layer utilities {
-  .glass-panel {
-    @apply bg-surface-variant/40 backdrop-blur-xl border border-[var(--glass-border)] transition-colors duration-500;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-marquee {
+    animation: marquee 36s linear infinite;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-br from-primary to-primary-container bg-clip-text text-transparent;
+  @keyframes pulse-dot {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(0.8);
+    }
   }
-  
-  .glow-shadow {
-    box-shadow: 0 0 100px 5px rgba(208, 188, 255, 0.05); /* Nebula Shadow */
+  .animate-pulse-dot {
+    animation: pulse-dot 2.2s ease-in-out infinite;
   }
 
-  :root.light .glow-shadow {
-    box-shadow: 0 0 100px 5px rgba(99, 102, 241, 0.15); /* Light cool shadow */
+  @keyframes float-soft {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
-
-  /* No-Line Rule transitions */
-  .transition-boundary {
-    @apply transition-colors duration-500 ease-in-out;
+  .animate-float-soft {
+    animation: float-soft 6s ease-in-out infinite;
   }
 }
 
-html.lenis, html.lenis body {
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
   height: auto;
 }
-
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
-
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
-
 .lenis.lenis-stopped {
   overflow: hidden;
 }
-
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-pulse-dot,
+  .animate-float-soft {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }

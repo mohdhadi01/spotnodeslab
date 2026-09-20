@@ -1,99 +1,127 @@
-import React, { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import spotnodesLogo from '../../assets/spotnodeslogo.png';
+import React, { useEffect, useState } from "react";
+import { ArrowUp, ArrowUpRight } from "lucide-react";
+import data from "../../data/site.json";
+import { LogoMark } from "../ui/LogoMark";
+import { useScrollTo } from "../../lib/useScrollTo";
 
-const SocialDropdown = ({ title, links, colorClass }) => {
-  const [isOpen, setIsOpen] = useState(false);
+function IstClock() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const fmt = new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+      timeZone: "Asia/Kolkata",
+    });
+    const tick = () => setTime(fmt.format(new Date()));
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return <span className="font-mono tabular-nums">{time} IST</span>;
+}
+
+/* Footer sits on ink for a confident close to the light page. */
+export function Footer() {
+  const scrollTo = useScrollTo();
+  const year = new Date().getFullYear();
+  const socials = data.contact.socials.filter((s) => s.url);
 
   return (
-    <div 
-      className="relative z-50 flex items-center justify-center p-2"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <div className={`cursor-pointer transition-colors flex items-center gap-1 ${isOpen ? colorClass : 'text-surface-variant hover:text-[var(--text-main)]'}`}>
-        {title} <motion.div animate={{ rotate: isOpen ? 45 : 0 }} transition={{ type: "spring", stiffness: 300 }}><ArrowUpRight className="w-3 h-3" /></motion.div>
-      </div>
+    <footer className="relative overflow-hidden bg-ink text-white">
+      <div className="container-x flex flex-col gap-14 pb-8 pt-16 md:pt-20">
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <div className="flex items-center gap-2.5">
+              <LogoMark className="h-5 w-5 text-white" />
+              <span className="font-display text-lg font-medium">{data.brand.name}</span>
+            </div>
+            <p className="mt-5 max-w-xs text-lg leading-relaxed text-white/60">
+              {data.footer.tagline}
+            </p>
+            <p className="mt-6 flex items-center gap-2 text-sm text-white/50">
+              <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-accent" />
+              {data.hero.availability}
+            </p>
+          </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.95, filter: 'blur(5px)' }}
-            animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, y: 10, scale: 0.95, filter: 'blur(5px)' }}
-            transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 min-w-[140px] bg-surface-lowest/90 backdrop-blur-3xl border border-[var(--glass-border)] rounded-2xl p-2 shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex flex-col gap-1 overflow-hidden pointer-events-auto"
-          >
-            {links.map((link, i) => (
-              <a
-                key={i}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                className={`flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-[var(--glass-border)] transition-colors text-xs font-bold ${colorClass}`}
-              >
-                {link.name}
-                <ArrowUpRight className="w-3 h-3 opacity-50" />
-              </a>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+          <div className="md:col-span-2">
+            <p className="label-mono mb-5 !text-white/40">Sitemap</p>
+            <ul className="flex flex-col gap-3">
+              {data.nav.map((item) => (
+                <li key={item.label}>
+                  <button
+                    onClick={() => scrollTo(item.href)}
+                    className="u-underline text-sm text-white/60 hover:text-white"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-export const Footer = () => {
-  return (
-    <footer className="w-full border-t border-outline-variant/30 py-8 px-6 bg-surface-lowest">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        
-        <div 
-           className="flex items-center gap-3 cursor-pointer group"
-           onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+          <div className="md:col-span-3">
+            <p className="label-mono mb-5 !text-white/40">Connect</p>
+            <ul className="flex flex-col gap-3">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center gap-1.5 text-sm text-white/60 hover:text-white"
+                  >
+                    <span className="u-underline">{s.label}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100" />
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href={`mailto:${data.contact.email}`}
+                  className="u-underline text-sm text-white/60 hover:text-white"
+                >
+                  {data.contact.email}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <p className="label-mono mb-5 !text-white/40">Studio time</p>
+            <p className="text-sm text-white/60">{data.footer.location}</p>
+            <p className="mt-3 text-sm text-white/60">
+              <IstClock />
+            </p>
+          </div>
+        </div>
+
+        {/* Wordmark */}
+        <div
+          aria-hidden="true"
+          className="select-none whitespace-nowrap font-display text-[11.5vw] font-semibold leading-[0.9] tracking-tight text-white/[0.07]"
         >
-          <motion.div
-            whileHover={{ rotate: 180, scale: 1.2 }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+          {data.brand.name}
+        </div>
+
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+          <p>
+            © {year} {data.brand.name}. All rights reserved.
+          </p>
+          <p className="hidden md:block">{data.brand.descriptor}</p>
+          <button
+            onClick={() => scrollTo("#top")}
+            className="group flex items-center gap-2 text-white/60 hover:text-white"
           >
-            <img src={spotnodesLogo} alt="Spotnodes Logo" className="w-8 h-8 object-contain drop-shadow-md grayscale group-hover:grayscale-0 transition-all duration-500" />
-          </motion.div>
-          <span className="text-[var(--text-main)] transition-colors duration-500 font-manrope font-bold text-xl group-hover:text-primary">Spotnodes Lab</span>
+            {data.footer.backToTop}
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 transition-colors group-hover:border-accent group-hover:bg-accent">
+              <ArrowUp className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
+            </span>
+          </button>
         </div>
-
-        <div className="text-surface-variant text-sm flex gap-4 md:gap-6 items-center relative z-40">
-          <SocialDropdown 
-             title="GitHub" 
-             colorClass="text-primary"
-             links={[
-               { name: 'Hadi', url: 'https://github.com/mohdhadi01' },
-               { name: 'Akhilesh', url: 'https://github.com/Akhilesh-va' }
-             ]} 
-          />
-          <SocialDropdown 
-             title="LinkedIn" 
-             colorClass="text-secondary"
-             links={[
-               { name: 'Hadi', url: 'https://www.linkedin.com/in/mohd-hadi-5a4638226/' },
-               { name: 'Akhilesh', url: 'https://www.linkedin.com/in/akhilesh2002/' }
-             ]} 
-          />
-          <SocialDropdown 
-             title="Instagram" 
-             colorClass="text-[#e8b4b8]"
-             links={[
-               { name: 'Hadi', url: 'https://www.instagram.com/mysterbyte/' },
-               { name: 'Akhilesh', url: 'https://www.instagram.com/engg.vlogs/' }
-             ]} 
-          />
-        </div>
-
-        <div className="text-surface-variant text-sm">
-          &copy; {new Date().getFullYear()} Spotnodes Lab. All rights reserved.
-        </div>
-
       </div>
     </footer>
   );
-};
+}

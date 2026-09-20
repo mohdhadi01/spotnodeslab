@@ -1,0 +1,320 @@
+{
+  "brand": {
+    "name": "SpotNodes",
+    "descriptor": "Software Engineering Studio"
+  },
+  "seo": {
+    "title": "SpotNodes — Software Engineering Studio",
+    "description": "SpotNodes is a software engineering studio building web platforms, Android apps and Web3 interfaces that hold up in production. Quality engineering, honest pricing, real delivery."
+  },
+  "nav": [
+    { "label": "Work", "href": "#work" },
+    { "label": "Services", "href": "#services" },
+    { "label": "Process", "href": "#process" },
+    { "label": "Studio", "href": "#studio" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "eyebrow": "Software Engineering Studio",
+    "location": "India → Working worldwide",
+    "headline": [
+      [{ "t": "We design & engineer" }],
+      [{ "t": "software that " }, { "t": "performs", "serif": true }, { "t": "." }]
+    ],
+    "sub": "From web platforms to Android apps and Web3 products — we take ideas from first sketch to production, with quality you can measure and a team that treats your product like its own.",
+    "ctas": {
+      "primary": { "label": "Start a project", "href": "#contact" },
+      "secondary": { "label": "Explore the work", "href": "#work" }
+    },
+    "availability": "Available for new projects",
+    "scrollHint": "Scroll",
+    "marquee": [
+      "Web Platforms",
+      "Android Apps",
+      "React Native",
+      "Kotlin",
+      "Next.js",
+      "Node.js",
+      "Web3 Interfaces",
+      "TypeScript",
+      "Product Engineering",
+      "Performance",
+      "ASO & Growth"
+    ],
+    "visual": {
+      "main": "/images/zooox.png",
+      "mainAlt": "ZOOOX — cashback and spend analytics platform",
+      "float1": "/images/buckmintDex.png",
+      "float1Alt": "Buckmint DEX — Web3 trading interface",
+      "float2": "/images/booktranspo.png",
+      "float2Alt": "Book Transpo — logistics booking app"
+    }
+  },
+  "work": {
+    "label": "01 — Work",
+    "heading": [[{ "t": "Selected work." }]],
+    "sub": "A selection of recent projects — designed, engineered and shipped to real users.",
+    "featured": [
+      {
+        "id": "zooox",
+        "index": "01",
+        "title": "ZOOOX",
+        "category": "Full Product — Mobile & Web",
+        "summary": "Cashback and spend analytics that turn everyday purchases into money back and clear insight.",
+        "description": "ZOOOX is a production-grade cashback and spend-analytics platform. It connects to a user's email, extracts transactions automatically and turns them into interactive dashboards — engineered to stay fast on large datasets and real-time updates, on mobile and web.",
+        "features": [
+          "Email-powered transaction extraction",
+          "Interactive cashback & spend dashboards",
+          "Real-time insights at large-dataset scale",
+          "Automation that maximises cashback"
+        ],
+        "tech": ["React Native", "TypeScript", "GraphQL"],
+        "image": "/images/zooox.png",
+        "accent": "#7C5CFC",
+        "links": [
+          { "label": "Mobile app", "url": "https://play.google.com/store/apps/details?id=xyz.zooox&hl=en_IN", "type": "play" },
+          { "label": "Web platform", "url": "https://zooox.xyz/", "type": "live" }
+        ]
+      },
+      {
+        "id": "buckmint",
+        "index": "02",
+        "title": "Buckmint DEX",
+        "category": "Web3 Platform",
+        "summary": "A decentralised exchange interface with wallet connection, live trading and portfolio tracking.",
+        "description": "A modern Web3 decentralised exchange: seamless wallet connection, token trading with dynamic token-aware charts, portfolio tracking with live P&L, and full transaction history. Built for real-time crypto trading with a responsive, dark-mode-first interface.",
+        "features": [
+          "Seamless Web3 wallet connection & auth",
+          "Real-time trading with dynamic charts",
+          "Portfolio tracking with live P&L",
+          "Transaction history with filtering & export",
+          "Dark-mode-first, fully responsive design"
+        ],
+        "tech": ["React.js", "TypeScript", "Redux", "Styled Components"],
+        "image": "/images/buckmintDex.png",
+        "accent": "#26C281",
+        "links": [{ "label": "Live exchange", "url": "https://exchange.buckmint.org/", "type": "live" }]
+      },
+      {
+        "id": "booktranspo",
+        "index": "03",
+        "title": "Book Transpo",
+        "category": "Android System",
+        "summary": "Logistics and ride booking with live tracking, route optimisation and scalable workflows.",
+        "description": "A logistics and ride-booking platform engineered for real-time operations: live tracking, route optimisation and frictionless booking, with deep mapping integration for accurate navigation and location intelligence — backed by a secure, real-time backend.",
+        "features": [
+          "Live tracking & route optimisation",
+          "Mapping-service navigation intelligence",
+          "Seamless, scalable booking workflows",
+          "Secure real-time backend data flow"
+        ],
+        "tech": ["Android", "AI", "Google Maps"],
+        "image": "/images/booktranspo.png",
+        "accent": "#E85C4A",
+        "links": [
+          { "label": "Play Store", "url": "https://play.google.com/store/apps/details?id=com.booktranspo.users&pcampaignid=web_share", "type": "play" }
+        ]
+      },
+      {
+        "id": "umrahchalo",
+        "index": "04",
+        "title": "Umrah Chalo",
+        "category": "Production Web",
+        "summary": "A deployed travel-booking platform built for seamless UX under real user traffic.",
+        "description": "A real-world travel platform for discovering and booking Umrah packages. Designed for clarity and responsiveness across devices, with a booking flow built for real traffic — production-ready from day one.",
+        "features": [
+          "Seamless booking UX for real traffic",
+          "Responsive performance across devices",
+          "Clean package discovery & booking flow",
+          "Production-ready reliability"
+        ],
+        "tech": ["React.js", "MongoDB", "WebSockets"],
+        "image": "/images/umrahchalo.png",
+        "accent": "#3E9B6C",
+        "links": [{ "label": "Live website", "url": "https://www.umrachalo.com/", "type": "live" }]
+      }
+    ],
+    "archiveLabel": "More builds & experiments",
+    "archive": [
+      {
+        "title": "BidCraft Agent",
+        "summary": "AI-powered RFP responder for intelligent document workflows and generation.",
+        "tech": ["React Native", "Firebase", "AI", "PDF ingestion"],
+        "links": [
+          { "label": "App", "url": "https://drive.google.com/drive/folders/1EV98jy2Hsh90v3Z3aENWw1hMH0LxbJyf", "type": "app" },
+          { "label": "GitHub", "url": "https://github.com/Akhilesh-va/BidCraft-Agent-App", "type": "github" }
+        ]
+      },
+      {
+        "title": "MockInMinutes",
+        "summary": "AI interview assistant delivering real-time, voice-based mock interactions.",
+        "tech": ["React Native", "AI engine", "Voice sync"],
+        "links": [
+          { "label": "App", "url": "https://drive.google.com/drive/folders/1EV98jy2Hsh90v3Z3aENWw1hMH0LxbJyf", "type": "app" }
+        ]
+      },
+      {
+        "title": "Your Bag Buddy AI",
+        "summary": "Smart travel checklist generating highly optimised packing manifests via AI.",
+        "tech": ["Kotlin", "Jetpack Compose", "Smart AI"],
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/Akhilesh-va/YourBagBuddyAI", "type": "github" }
+        ]
+      },
+      {
+        "title": "Arena",
+        "summary": "Community-driven Android architecture for live, real-time gamer messaging.",
+        "tech": ["Firebase sync", "Real-time architecture"],
+        "links": [
+          { "label": "GitHub", "url": "https://github.com/Akhilesh-va/Arena-", "type": "github" }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "label": "02 — Services",
+    "heading": [[{ "t": "What we do." }]],
+    "sub": "Four disciplines, one standard: production-grade quality. Pick one, or hand us the whole product.",
+    "items": [
+      {
+        "id": "web",
+        "index": "01",
+        "title": "Web Engineering",
+        "description": "Marketing sites, dashboards and full platforms — fast to load, fast to use, and built on stacks your team can grow with.",
+        "stack": ["React", "Next.js", "Node.js", "Express", "Spring", "Tailwind", "MongoDB", "PostgreSQL"],
+        "representative": { "label": "ZOOOX Web", "href": "#work" }
+      },
+      {
+        "id": "app",
+        "index": "02",
+        "title": "App Engineering",
+        "description": "Native Android and cross-platform apps engineered for performance, offline reality and store readiness — from build to Play Store release.",
+        "stack": ["Kotlin", "Java", "Jetpack Compose", "React Native", "Android SDK", "REST APIs"],
+        "representative": { "label": "Book Transpo", "href": "#work" }
+      },
+      {
+        "id": "game",
+        "index": "03",
+        "title": "Game Engineering",
+        "description": "Interactive 3D and browser-based experiences with real-time rendering, physics and the performance budgets to match.",
+        "stack": ["Three.js", "Unity", "WebGL", "3D rendering", "Physics engines"],
+        "representative": null
+      },
+      {
+        "id": "aso",
+        "index": "04",
+        "title": "ASO & Growth",
+        "description": "Getting found is engineering too. Store listings, keyword strategy and conversion tuning that turn installs into users.",
+        "stack": ["Keyword optimisation", "App ranking", "Store listing", "Conversion", "Analytics"],
+        "representative": null
+      }
+    ]
+  },
+  "process": {
+    "label": "03 — Process",
+    "heading": [[{ "t": "How we work." }]],
+    "sub": "A tight, transparent loop — you see working software every week, not a big reveal at the end.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Discover",
+        "description": "We start with your business, not your backlog — goals, users and constraints understood before a line of code exists."
+      },
+      {
+        "num": "02",
+        "title": "Architect",
+        "description": "The right stack for the job, a system designed to scale, and milestones you can actually hold us to."
+      },
+      {
+        "num": "03",
+        "title": "Build",
+        "description": "Short cycles, working software every week, and a codebase your future team won't hate us for."
+      },
+      {
+        "num": "04",
+        "title": "Harden",
+        "description": "QA, performance profiling and security passes — until it survives everything we can throw at it."
+      },
+      {
+        "num": "05",
+        "title": "Ship",
+        "description": "Deployment, monitoring and post-launch support. Launch day is the starting line, not the finish."
+      }
+    ]
+  },
+  "studio": {
+    "label": "04 — Studio",
+    "heading": [[{ "t": "Who we are." }]],
+    "manifesto": "Great software comes from ownership. The people who scope your product are the people who design, build and ship it — every requirement, every commit, every deploy. No handoffs, no telephone game, nothing lost in translation.",
+    "stats": [
+      { "value": 8, "suffix": "", "label": "Products built" },
+      { "value": 4, "suffix": "", "label": "Live in production" },
+      { "value": 3, "suffix": "", "label": "Platforms — web, Android, Web3" },
+      { "value": 10, "suffix": "+", "label": "Technologies in production" }
+    ],
+    "principles": [
+      {
+        "title": "Engineers up front",
+        "body": "You speak directly with the people writing your code — decisions happen in minutes, not through layers of account management."
+      },
+      {
+        "title": "Production or it doesn't count",
+        "body": "Demos impress in a meeting; software earns trust in production. We ship things that survive real users and real traffic."
+      },
+      {
+        "title": "Honest scope, honest price",
+        "body": "We quote what a build actually takes — no padding, no surprise invoices, and no cutting corners to hit a number."
+      }
+    ],
+    "teamLabel": "Leadership",
+    "team": [
+      {
+        "name": "Akhilesh Singh Maurya",
+        "role": "Co-founder — Android Engineering",
+        "bio": "Leads Android engineering — robust, production-grade apps built for performance and scale, including two live apps on the Play Store.",
+        "experience": "Android · Kotlin · Compose",
+        "highlight": "2 production apps on Google Play",
+        "photo": "/akhilesh.png",
+        "resume": "/Akhilesh_Singh_Maurya.pdf",
+        "portfolio": "https://akhileshdev.me"
+      },
+      {
+        "name": "Mohd Hadi",
+        "role": "Co-founder — Web Platform Engineering",
+        "bio": "Leads web platform engineering — modern, lightning-fast web and cross-platform products, from architecture through release.",
+        "experience": "Web · React · Node",
+        "highlight": "Multiple web apps deployed",
+        "photo": "/hadi.jpeg",
+        "resume": "/hadi resume.pdf",
+        "portfolio": "https://mohdhadi.online"
+      }
+    ]
+  },
+  "contact": {
+    "label": "05 — Contact",
+    "heading": [[{ "t": "Let's build" }], [{ "t": "something great." }]],
+    "sub": "Tell us what you're making. We'll reply within two working days — usually faster.",
+    "email": "hello@spotnodes.dev",
+    "socials": [
+      { "label": "GitHub", "url": "https://github.com/Akhilesh-va" },
+      { "label": "LinkedIn", "url": "" },
+      { "label": "X / Twitter", "url": "" }
+    ],
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "message": "What are you building?",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "sent": "Message sent — we'll be in touch.",
+      "errorFields": "Please fill out all fields.",
+      "errorEmail": "Please enter a valid email address.",
+      "errorGeneric": "Failed to send. Try again."
+    }
+  },
+  "footer": {
+    "tagline": "Engineering software that performs.",
+    "location": "India · Working worldwide",
+    "backToTop": "Back to top"
+  }
+}
