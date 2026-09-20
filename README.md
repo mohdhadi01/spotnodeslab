@@ -22,15 +22,18 @@ and the UI updates — no component changes needed.
 | `brand` | Name shown in header/footer/browser tab |
 | `seo` | Browser tab title + meta description |
 | `nav` | Menu links (label + `#section` anchor) |
-| `hero` | Eyebrow, headline, sub, buttons, availability pill, capability marquee |
-| `hero.headline` | Array of lines; each line is an array of segments. Add `"serif": true` to a segment to render it in the blue italic serif accent |
-| `hero.visual` | The 3 product screenshots floating in the hero (paths in `/public/images/`) |
-| `work.featured` | The case-study cards (click → case modal). `accent` colors the dot markers, `image` is the screenshot |
+| `hero` | Badge, headline, sub, CTAs, stat chips, the "Free intro call" availability card, capability marquee |
+| `hero.headline` | Array of lines; each line is an array of segments. Add `"mark": true` to a segment for the blue highlighter accent |
+| `hero.card` | The hero booking card — title, length, note, timezone |
+| `work.featured` | Drag-gallery cards shown in browser frames (`siteUrl` appears in the fake address bar). Click → case modal |
 | `work.archive` | The "More builds & experiments" grid |
-| `services.items` | Accordion rows — title, description, tech stack chips, optional "Seen in X" link |
-| `process.steps` | The horizontal scroll steps (desktop) / stacked list (mobile) |
-| `studio` | Manifesto paragraph, count-up stats, principles, leadership team cards |
-| `contact` | Heading, email, socials (empty `url` = hidden), form labels |
+| `ctaBand` | The blue "Have something in mind?" banner |
+| `services.items` | Bento cards — title, tagline, description, stack chips, icon (`globe\|smartphone\|gamepad\|trending`) |
+| `engagements.items` | Pricing cards (`featured: true` gets the accent border + "Most popular"). `cta.prefill` pre-fills the message form |
+| `process.steps` | Sticky-number walkthrough — num, title, description, `youGet` chip |
+| `studio` | Manifesto paragraph, count-up stats, leadership team cards |
+| `faq.items` | Accordion questions/answers |
+| `connect` | Conversion hub: `schedule` (slots, daysAhead, skipWeekend, form labels), `message` (form labels), `direct` (email, `whatsapp` — empty = hidden, socials) |
 | `footer` | Tagline, location, back-to-top label |
 
 ### Images
@@ -51,8 +54,10 @@ VITE_GOOGLE_APPS_SCRIPT_URL="https://script.google.com/macros/s/.../exec"
 
 ### ⚠️ Update before going live
 
-- `contact.email` — currently a placeholder (`hello@spotnodes.dev`). Set the real inbox.
-- `contact.socials` — LinkedIn / X URLs are empty (hidden until filled).
+- `connect.direct.email` — currently a placeholder (`hello@spotnodes.dev`). Set the real inbox.
+- `connect.direct.whatsapp` — empty (hidden). Set the number in international format, e.g. `919999999999`, to enable the WhatsApp button + dock item.
+- `connect.direct.socials` — LinkedIn / X URLs are empty (hidden until filled).
+- Scheduler slots are offered in IST from `connect.schedule.slots` — booking requests arrive in your Google Sheet with `type: "schedule-call"` and the chosen `slot`.
 - favicon: `public/favicon.svg` (inline SVG, matches the node mark).
 
 ## Where the design lives

@@ -26,7 +26,7 @@ function IstClock() {
 export function Footer() {
   const scrollTo = useScrollTo();
   const year = new Date().getFullYear();
-  const socials = data.contact.socials.filter((s) => s.url);
+  const socials = (data.connect.direct.socials ?? []).filter((s) => s.url);
 
   return (
     <footer className="relative overflow-hidden bg-ink text-white">
@@ -42,7 +42,7 @@ export function Footer() {
             </p>
             <p className="mt-6 flex items-center gap-2 text-sm text-white/50">
               <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-accent" />
-              {data.hero.availability}
+              {data.hero.badge}
             </p>
           </div>
 
@@ -80,10 +80,10 @@ export function Footer() {
               ))}
               <li>
                 <a
-                  href={`mailto:${data.contact.email}`}
+                  href={`mailto:${data.connect.direct.email}`}
                   className="u-underline text-sm text-white/60 hover:text-white"
                 >
-                  {data.contact.email}
+                  {data.connect.direct.email}
                 </a>
               </li>
             </ul>

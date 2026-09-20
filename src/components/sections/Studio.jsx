@@ -79,19 +79,6 @@ export function Studio() {
           ))}
         </div>
 
-        {/* Principles */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {data.studio.principles.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.08} y={20}>
-              <div className="h-full rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)]">
-                <p className="font-mono text-xs text-accent">0{i + 1}</p>
-                <h3 className="mt-3.5 text-lg font-medium tracking-tight text-ink">{p.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted">{p.body}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
         {/* Leadership */}
         <div>
           <Reveal y={14}>

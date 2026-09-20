@@ -22,7 +22,7 @@ export function Reveal({ children, delay = 0, y = 28, className = "", as = "div"
 
 /**
  * Headline renderer driven by data:
- * lines: [[{ t: "Small team." }], [{ t: "Serious", serif: true }, { t: " software." }]]
+ * lines: [[{ t: "Work that " }, { t: "shipped", mark: true }, { t: "." }]]
  * Each line wipes in from below with a mask.
  * The observer sits on the parent (never fully clipped) and stagger-propagates
  * to the masked lines — observing the lines themselves would deadlock, since a
@@ -36,7 +36,12 @@ export function Headline({ lines, className = "", as = "h2", delay = 0, stagger 
   };
   const lineVariant = {
     hidden: { y: "112%" },
-    show: { y: "0%", transition: { duration: 1.05, ease: EASE } },
+    show: { y: "0%", transition: { duration: 0.95, ease: EASE } },
+  };
+  const renderSegment = (s, j) => {
+    if (s.mark) return <span key={j} className="text-mark">{s.t}</span>;
+    if (s.serif) return <em key={j} className="serif-accent pr-[0.04em]">{s.t}</em>;
+    return <span key={j}>{s.t}</span>;
   };
   return (
     <Tag
@@ -47,17 +52,9 @@ export function Headline({ lines, className = "", as = "h2", delay = 0, stagger 
       className={className}
     >
       {lines.map((segments, i) => (
-        <span key={i} className="block overflow-hidden pb-[0.1em] -mb-[0.1em]">
+        <span key={i} className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
           <motion.span variants={lineVariant} className="block will-change-transform">
-            {segments.map((s, j) =>
-              s.serif ? (
-                <em key={j} className="serif-accent pr-[0.04em]">
-                  {s.t}
-                </em>
-              ) : (
-                <span key={j}>{s.t}</span>
-              )
-            )}
+            {segments.map(renderSegment)}
           </motion.span>
         </span>
       ))}

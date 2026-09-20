@@ -1,32 +1,33 @@
 @import "tailwindcss";
 
 /* ————————————————————————————————————————
-   SpotNodes Design System — light, classic, professional.
-   Warm off-white canvas · white surfaces · ink text
-   · one confident blue. Display: Clash Display
-   · Body: Satoshi · Labels: JetBrains Mono.
+   SpotNodes Design System v3 — "product-led studio".
+   Cool paper neutrals · white cards · electric blue
+   · highlight-mark accent · rounded bento surfaces.
+   Clash Display · Satoshi · JetBrains Mono.
 ———————————————————————————————————————— */
 
 @theme {
-  --color-bg: #f7f7f5;
+  --color-bg: #f5f6f8;
   --color-surface: #ffffff;
-  --color-surface-2: #f1f2f0;
-  --color-ink: #101319;
-  --color-muted: #565e6b;
-  --color-faint: #8b93a1;
-  --color-line: rgba(16, 19, 25, 0.09);
-  --color-line-strong: rgba(16, 19, 25, 0.18);
-  --color-accent: #2e6bff;
-  --color-accent-strong: #1f55e0;
-  --color-accent-soft: rgba(46, 107, 255, 0.08);
+  --color-surface-2: #edeff3;
+  --color-ink: #0b0e16;
+  --color-muted: #545c6d;
+  --color-faint: #8a92a3;
+  --color-line: rgba(11, 14, 22, 0.08);
+  --color-line-strong: rgba(11, 14, 22, 0.16);
+  --color-accent: #2e63f6;
+  --color-accent-strong: #1d4fd8;
+  --color-accent-soft: rgba(46, 99, 246, 0.09);
+  --color-accent-ring: rgba(46, 99, 246, 0.22);
 
   --font-display: "Clash Display", "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Satoshi", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 
-  --shadow-card: 0 1px 2px rgba(16, 19, 25, 0.04), 0 8px 24px -8px rgba(16, 19, 25, 0.08);
-  --shadow-card-lg: 0 2px 4px rgba(16, 19, 25, 0.05), 0 24px 48px -16px rgba(16, 19, 25, 0.16);
+  --shadow-card: 0 1px 2px rgba(11, 14, 22, 0.05), 0 8px 24px -10px rgba(11, 14, 22, 0.1);
+  --shadow-card-lg: 0 2px 6px rgba(11, 14, 22, 0.06), 0 28px 56px -20px rgba(11, 14, 22, 0.22);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -58,54 +59,63 @@
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
   }
   ::-webkit-scrollbar-track {
     background: var(--color-bg);
   }
   ::-webkit-scrollbar-thumb {
-    background: #d3d6db;
+    background: #d2d6dd;
     border-radius: 8px;
     border: 3px solid var(--color-bg);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #c0c4ca;
+    background: #bfc4cd;
   }
 }
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-[1280px] px-5 md:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-[1200px] px-5 md:px-8;
   }
 
-  /* Type scale — sized for comfortable reading, not poster walls */
   .text-display {
-    font-size: clamp(2.4rem, 5vw, 4.4rem);
-    line-height: 1.04;
+    font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+    line-height: 1.08;
     letter-spacing: -0.02em;
   }
   .text-h2 {
-    font-size: clamp(1.9rem, 3.4vw, 3rem);
-    line-height: 1.08;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    line-height: 1.12;
     letter-spacing: -0.018em;
   }
   .text-h3 {
-    font-size: clamp(1.3rem, 2vw, 1.65rem);
-    line-height: 1.2;
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    line-height: 1.25;
     letter-spacing: -0.01em;
   }
   .text-lead {
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
-    line-height: 1.6;
+    font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+    line-height: 1.65;
   }
 
-  .serif-accent {
-    @apply font-serif italic font-normal;
-    letter-spacing: -0.01em;
+  /* Highlighter-mark accent for key phrases */
+  .text-mark {
+    position: relative;
+    white-space: nowrap;
+  }
+  .text-mark::before {
+    content: "";
+    position: absolute;
+    inset: 0.1em -0.15em;
+    border-radius: 0.35em;
+    background: linear-gradient(104deg, rgba(46, 99, 246, 0.14) 0%, rgba(46, 99, 246, 0.22) 60%, rgba(46, 99, 246, 0.12) 100%);
+    z-index: -1;
   }
 
   .label-mono {
@@ -128,14 +138,33 @@
   }
 
   .bg-dots {
-    background-image: radial-gradient(circle, rgba(16, 19, 25, 0.16) 1px, transparent 1.4px);
+    background-image: radial-gradient(circle, rgba(11, 14, 22, 0.15) 1px, transparent 1.4px);
     background-size: 24px 24px;
   }
 
-  .frame {
-    @apply relative overflow-hidden rounded-xl bg-surface;
-    border: 1px solid var(--color-line);
+  /* Soft blue mesh glow for hero / feature cards */
+  .mesh-glow {
+    background:
+      radial-gradient(42% 46% at 18% 22%, rgba(46, 99, 246, 0.12), transparent 70%),
+      radial-gradient(38% 42% at 82% 30%, rgba(56, 189, 248, 0.1), transparent 70%),
+      radial-gradient(46% 50% at 60% 88%, rgba(99, 102, 241, 0.1), transparent 70%);
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
     box-shadow: var(--shadow-card);
+  }
+
+  /* Browser-frame chrome for product shots */
+  .browser-frame {
+    @apply overflow-hidden rounded-xl border border-line bg-surface;
+    box-shadow: var(--shadow-card);
+  }
+  .browser-chrome {
+    @apply flex items-center gap-2 border-b border-line bg-surface-2/70 px-3.5 py-2.5;
+  }
+  .browser-dot {
+    @apply h-2.5 w-2.5 rounded-full;
   }
 }
 
@@ -176,6 +205,13 @@
   }
   .animate-float-soft {
     animation: float-soft 6s ease-in-out infinite;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
 

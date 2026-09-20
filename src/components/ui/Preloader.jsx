@@ -63,7 +63,7 @@ export function Preloader({ onDone }) {
                 transition={{ duration: 0.8, ease: EASE }}
                 className="text-h2 font-display leading-[1.05] text-ink"
               >
-                We design &amp; engineer <em className="serif-accent">software</em>.
+                We design, build &amp; ship <span className="text-mark">software</span>.
               </motion.p>
             </div>
             <p className="font-mono text-sm tabular-nums text-faint md:text-base">

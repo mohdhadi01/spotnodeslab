@@ -3,12 +3,16 @@ import { Layout } from "./components/layout/Layout";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { Preloader } from "./components/ui/Preloader";
+import { ConnectDock } from "./components/ui/ConnectDock";
 import { Hero } from "./components/sections/Hero";
 import { Work } from "./components/sections/Work";
+import { CtaBand } from "./components/sections/CtaBand";
 import { Services } from "./components/sections/Services";
+import { Engagements } from "./components/sections/Engagements";
 import { Process } from "./components/sections/Process";
 import { Studio } from "./components/sections/Studio";
-import { Contact } from "./components/sections/Contact";
+import { Faq } from "./components/sections/Faq";
+import { Connect } from "./components/sections/Connect";
 import data from "./data/site.json";
 
 export default function App() {
@@ -25,12 +29,16 @@ export default function App() {
       <main>
         <Hero ready={ready} />
         <Work />
+        <CtaBand />
         <Services />
+        <Engagements />
         <Process />
         <Studio />
-        <Contact />
+        <Faq />
+        <Connect />
       </main>
       <Footer />
+      <ConnectDock />
     </Layout>
   );
 }

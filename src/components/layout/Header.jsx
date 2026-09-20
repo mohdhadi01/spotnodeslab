@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CalendarRange } from "lucide-react";
 import data from "../../data/site.json";
 import { LogoMark } from "../ui/LogoMark";
 import { Magnetic } from "../ui/Magnetic";
@@ -74,8 +74,8 @@ export function Header() {
                 onClick={() => go("#contact")}
                 className="group flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-white transition-colors duration-300 hover:bg-accent-strong"
               >
-                Start a project
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
+                Book a call
+                <CalendarRange className="h-4 w-4" />
               </button>
             </Magnetic>
 
@@ -145,7 +145,7 @@ export function Header() {
                 onClick={() => go("#contact")}
                 className="flex w-full items-center justify-center gap-2 rounded-full bg-accent py-4 text-base font-bold text-white"
               >
-                Start a project <ArrowUpRight className="h-4 w-4" />
+                Book a free call <CalendarRange className="h-4 w-4" />
               </button>
             </motion.div>
           </motion.div>
