@@ -54,7 +54,7 @@ VITE_GOOGLE_APPS_SCRIPT_URL="https://script.google.com/macros/s/.../exec"
 
 ### ⚠️ Update before going live
 
-- `connect.direct.email` — currently a placeholder (`hello@spotnodes.dev`). Set the real inbox.
+- `connect.direct.email` is set to spotnodeslab@gmail.com (used across site, footer and mailto links).
 - `connect.direct.whatsapp` — empty (hidden). Set the number in international format, e.g. `919999999999`, to enable the WhatsApp button + dock item.
 - `connect.direct.socials` — LinkedIn / X URLs are empty (hidden until filled).
 - Scheduler slots are offered in IST from `connect.schedule.slots` — booking requests arrive in your Google Sheet with `type: "schedule-call"` and the chosen `slot`.

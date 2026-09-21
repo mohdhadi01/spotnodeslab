@@ -11,6 +11,7 @@ import { Services } from "./components/sections/Services";
 import { Engagements } from "./components/sections/Engagements";
 import { Process } from "./components/sections/Process";
 import { Studio } from "./components/sections/Studio";
+import { Testimonials } from "./components/sections/Testimonials";
 import { Faq } from "./components/sections/Faq";
 import { Connect } from "./components/sections/Connect";
 import data from "./data/site.json";
@@ -34,6 +35,7 @@ export default function App() {
         <Engagements />
         <Process />
         <Studio />
+        <Testimonials />
         <Faq />
         <Connect />
       </main>

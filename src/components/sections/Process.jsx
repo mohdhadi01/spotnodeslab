@@ -73,7 +73,7 @@ export function Process() {
                 ))}
               </div>
               <p className="mt-6 max-w-[26ch] text-sm leading-relaxed text-faint">
-                {data.process.steps[active].title} — {data.process.steps[active].youGet.toLowerCase()}
+                {data.process.steps[active].title} · {data.process.steps[active].youGet.toLowerCase()}
               </p>
             </div>
           </div>

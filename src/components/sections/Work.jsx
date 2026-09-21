@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Github, Lock, MoveHorizontal, Play, Smartphone, X } from "lucide-react";
 import { useLenis } from "lenis/react";
@@ -25,10 +25,58 @@ function BrowserFrame({ project, children }) {
   );
 }
 
+/** Phone mockup — used when the project is app-led and a portrait shot exists. */
+function PhoneFrame({ project, children }) {
+  return (
+    <div className="relative mx-auto w-full max-w-[270px]">
+      <div className="overflow-hidden rounded-[2rem] border border-line bg-surface shadow-[var(--shadow-card)]">
+        <div className="relative flex items-center justify-between bg-surface-2/70 px-5 pb-1 pt-2.5">
+          <span className="font-mono text-[9px] font-bold text-ink/60">9:41</span>
+          <span className="absolute left-1/2 top-1.5 h-4 w-16 -translate-x-1/2 rounded-full bg-ink/90" aria-hidden="true" />
+          <span className="flex h-2 w-6 items-center rounded-[3px] border border-ink/25 p-[1.5px]" aria-hidden="true">
+            <span className="h-full w-3/4 rounded-[1.5px] bg-ink/45" />
+          </span>
+        </div>
+        <div className="relative aspect-[9/16] overflow-hidden bg-surface-2">
+          {children}
+          <span
+            className="absolute bottom-1.5 left-1/2 h-1 w-20 -translate-x-1/2 rounded-full bg-ink/25"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+      <p className="mt-2.5 text-center font-mono text-[10px] text-faint">{project.siteUrl}</p>
+    </div>
+  );
+}
+
+/**
+ * A project marked `"device": "phone"` renders inside a phone mockup once its
+ * portrait `phoneImage` exists in /public/images; until then it gracefully
+ * falls back to the browser frame using the landscape screenshot.
+ */
+function usePhoneVisual(project) {
+  const [ok, setOk] = useState(false);
+  useEffect(() => {
+    setOk(false);
+    if (project.device !== "phone" || !project.phoneImage) return;
+    const img = new Image();
+    img.onload = () => setOk(true);
+    img.onerror = () => setOk(false);
+    img.src = project.phoneImage;
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, [project.device, project.phoneImage]);
+  return ok;
+}
+
 function CaseModal({ project, onClose }) {
   const lenis = useLenis();
+  const isPhone = usePhoneVisual(project);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
     lenis?.stop();
@@ -68,16 +116,28 @@ function CaseModal({ project, onClose }) {
           <X className="h-4 w-4" />
         </button>
 
-        <div className="relative h-48 overflow-hidden border-b border-line bg-surface-2 p-3 md:col-span-2 md:h-auto md:border-b-0 md:border-r md:p-4">
-          <div className="h-full w-full">
-            <BrowserFrame project={project}>
-              <img
-                src={project.image}
-                alt={`${project.title} interface`}
-                className="aspect-[16/10] w-full object-cover object-top"
-              />
-            </BrowserFrame>
-          </div>
+        <div className="relative flex h-48 items-center justify-center overflow-hidden border-b border-line bg-surface-2 p-3 md:col-span-2 md:h-auto md:border-b-0 md:border-r md:p-4">
+          {isPhone ? (
+            <div className="h-full py-2">
+              <PhoneFrame project={project}>
+                <img
+                  src={project.phoneImage}
+                  alt={`${project.title} app screen`}
+                  className="h-full w-full object-cover object-top"
+                />
+              </PhoneFrame>
+            </div>
+          ) : (
+            <div className="h-full w-full">
+              <BrowserFrame project={project}>
+                <img
+                  src={project.image}
+                  alt={`${project.title} interface`}
+                  className="aspect-[16/10] w-full object-cover object-top"
+                />
+              </BrowserFrame>
+            </div>
+          )}
         </div>
 
         <div data-lenis-prevent className="flex flex-col overflow-y-auto p-6 md:col-span-3 md:p-8">
@@ -124,10 +184,13 @@ function CaseModal({ project, onClose }) {
   );
 }
 
-function GalleryCard({ project, onOpen }) {
+function GalleryCard({ project, index, onOpen }) {
+  const isPhone = usePhoneVisual(project);
   return (
     <article
-      className="group w-[82vw] max-w-[520px] shrink-0 cursor-pointer snap-start sm:w-[520px]"
+      className={`group w-[82vw] max-w-[520px] shrink-0 cursor-pointer snap-start sm:w-[520px] ${
+        index % 2 === 1 ? "md:mt-12" : ""
+      } ${isPhone ? "sm:w-[360px]" : ""}`}
       data-cursor="drag"
       onClick={() => onOpen(project)}
       role="button"
@@ -136,16 +199,27 @@ function GalleryCard({ project, onOpen }) {
       aria-label={`Open ${project.title} case study`}
     >
       <div className="transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
-        <BrowserFrame project={project}>
-          <div className="relative aspect-[16/10] overflow-hidden bg-surface-2">
+        {isPhone ? (
+          <PhoneFrame project={project}>
             <img
-              src={project.image}
-              alt={`${project.title} interface`}
+              src={project.phoneImage}
+              alt={`${project.title} app screen`}
               loading="lazy"
               className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
-          </div>
-        </BrowserFrame>
+          </PhoneFrame>
+        ) : (
+          <BrowserFrame project={project}>
+            <div className="relative aspect-[16/10] overflow-hidden bg-surface-2">
+              <img
+                src={project.image}
+                alt={`${project.title} interface`}
+                loading="lazy"
+                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
+            </div>
+          </BrowserFrame>
+        )}
 
         <div className="mt-4 flex items-start justify-between gap-4 px-1">
           <div className="flex items-start gap-3.5">
@@ -235,10 +309,10 @@ export function Work() {
           onPointerUp={endDrag}
           onPointerLeave={endDrag}
           onClickCapture={onClickCapture}
-          className="no-scrollbar flex cursor-grab snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-5 pb-2 md:px-8 [mask-image:linear-gradient(90deg,transparent,black_3%,black_97%,transparent)]"
+          className="no-scrollbar flex cursor-grab snap-x snap-mandatory items-start gap-6 overflow-x-auto scroll-smooth px-5 pb-2 md:px-8 [mask-image:linear-gradient(90deg,transparent,black_3%,black_97%,transparent)]"
         >
-          {data.work.featured.map((project) => (
-            <GalleryCard key={project.id} project={project} onOpen={setSelected} />
+          {data.work.featured.map((project, i) => (
+            <GalleryCard key={project.id} project={project} index={i} onOpen={setSelected} />
           ))}
           {/* end card: CTA */}
           <div className="flex w-[70vw] max-w-[380px] shrink-0 snap-start items-center pl-2">

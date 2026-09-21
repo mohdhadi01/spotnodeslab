@@ -4,7 +4,7 @@
     "descriptor": "Software Engineering Studio"
   },
   "seo": {
-    "title": "SpotNodes — Software Engineering Studio",
+    "title": "SpotNodes | Software Engineering Studio",
     "description": "SpotNodes designs, builds and ships web platforms, Android apps and Web3 products. Free intro call, clear fixed quotes, production-grade delivery."
   },
   "nav": [
@@ -21,7 +21,7 @@
       [{ "t": "We design, build & ship" }],
       [{ "t": "software that drives " }, { "t": "real growth", "mark": true }, { "t": "." }]
     ],
-    "sub": "Web platforms, Android apps and Web3 products — engineered end-to-end by a senior team, priced for growing businesses, and delivered on a schedule you can see.",
+    "sub": "Web platforms, Android apps and Web3 products, engineered end-to-end by a senior team, priced for growing businesses, and delivered on a schedule you can see.",
     "ctas": {
       "primary": { "label": "Book a free intro call", "href": "#connect" },
       "secondary": { "label": "Explore the work", "href": "#work" }
@@ -34,7 +34,7 @@
     "card": {
       "title": "Free intro call",
       "length": "30 min · Google Meet",
-      "note": "No commitment — bring your idea, leave with a plan and an estimate.",
+      "note": "No commitment: bring your idea, leave with a plan and an estimate.",
       "timezone": "IST (UTC+5:30)",
       "cta": "Pick a slot"
     },
@@ -66,7 +66,7 @@
     ]
   },
   "work": {
-    "label": "01 — Work",
+    "label": "01 · Work",
     "heading": [[{ "t": "Work that " }, { "t": "shipped", "mark": true }, { "t": "." }]],
     "sub": "Products we've taken from first commit to real users. Open any card for the full story.",
     "hint": "Drag to explore",
@@ -77,9 +77,10 @@
         "title": "ZOOOX",
         "category": "Mobile & Web Product",
         "siteUrl": "zooox.xyz",
-        "device": "browser",
+        "device": "phone",
+        "phoneImage": "/images/zooox-phone.png",
         "summary": "Cashback and spend analytics that turn everyday purchases into money back and clear insight.",
-        "description": "ZOOOX is a production-grade cashback and spend-analytics platform. It connects to a user's email, extracts transactions automatically and turns them into interactive dashboards — engineered to stay fast on large datasets and real-time updates, on mobile and web.",
+        "description": "ZOOOX is a production-grade cashback and spend-analytics platform. It connects to a user's email, extracts transactions automatically and turns them into interactive dashboards, engineered to stay fast on large datasets and real-time updates, on mobile and web.",
         "features": [
           "Email-powered transaction extraction",
           "Interactive cashback & spend dashboards",
@@ -121,9 +122,10 @@
         "title": "Book Transpo",
         "category": "Android Logistics System",
         "siteUrl": "booktranspo.app",
-        "device": "browser",
+        "device": "phone",
+        "phoneImage": "/images/booktranspo-phone.png",
         "summary": "Logistics and ride booking with live tracking, route optimisation and scalable workflows.",
-        "description": "A logistics and ride-booking platform engineered for real-time operations: live tracking, route optimisation and frictionless booking, with deep mapping integration for accurate navigation and location intelligence — backed by a secure, real-time backend.",
+        "description": "A logistics and ride-booking platform engineered for real-time operations: live tracking, route optimisation and frictionless booking, with deep mapping integration for accurate navigation and location intelligence, backed by a secure, real-time backend.",
         "features": [
           "Live tracking & route optimisation",
           "Mapping-service navigation intelligence",
@@ -145,7 +147,7 @@
         "siteUrl": "umrachalo.com",
         "device": "browser",
         "summary": "A deployed travel-booking platform built for seamless UX under real user traffic.",
-        "description": "A real-world travel platform for discovering and booking Umrah packages. Designed for clarity and responsiveness across devices, with a booking flow built for real traffic — production-ready from day one.",
+        "description": "A real-world travel platform for discovering and booking Umrah packages. Designed for clarity and responsiveness across devices, with a booking flow built for real traffic, production-ready from day one.",
         "features": [
           "Seamless booking UX for real traffic",
           "Responsive performance across devices",
@@ -197,20 +199,20 @@
   },
   "ctaBand": {
     "heading": "Have something in mind?",
-    "sub": "Get a plan and a clear estimate for it — free, within two working days.",
+    "sub": "Get a plan and a clear estimate for it. Free, within two working days.",
     "cta": { "label": "Book a free intro call", "href": "#connect" }
   },
   "services": {
-    "label": "02 — Services",
+    "label": "02 · Services",
     "heading": [[{ "t": "Everything it takes " }, { "t": "to launch", "mark": true }, { "t": "." }]],
-    "sub": "One team for the whole journey — or plug us into the part you need.",
+    "sub": "One team for the whole journey, or plug us into the part you need.",
     "items": [
       {
         "id": "web",
         "icon": "globe",
         "title": "Web Engineering",
         "tagline": "Fast, modern platforms",
-        "description": "Marketing sites, dashboards and full platforms — fast to load, fast to use, and built on stacks your team can grow with.",
+        "description": "Marketing sites, dashboards and full platforms: fast to load, fast to use, and built on stacks your team can grow with.",
         "stack": ["React", "Next.js", "Node.js", "MongoDB", "PostgreSQL"],
         "representative": "ZOOOX"
       },
@@ -219,7 +221,7 @@
         "icon": "smartphone",
         "title": "App Engineering",
         "tagline": "Native & cross-platform",
-        "description": "Android and cross-platform apps engineered for performance and store readiness — from first build to Play Store release.",
+        "description": "Android and cross-platform apps engineered for performance and store readiness, from first build to Play Store release.",
         "stack": ["Kotlin", "Jetpack Compose", "React Native", "REST APIs"],
         "representative": "Book Transpo"
       },
@@ -237,16 +239,16 @@
         "icon": "trending",
         "title": "ASO & Growth",
         "tagline": "Get found, get installs",
-        "description": "Store listings, keyword strategy and conversion tuning — because getting found is engineering too.",
+        "description": "Store listings, keyword strategy and conversion tuning, because getting found is engineering too.",
         "stack": ["Keyword strategy", "Store listing", "Conversion", "Analytics"],
         "representative": null
       }
     ]
   },
   "engagements": {
-    "label": "03 — Pricing",
+    "label": "03 · Pricing",
     "heading": [[{ "t": "Ways to " }, { "t": "work with us", "mark": true }, { "t": "." }]],
-    "sub": "Clear scope, clear price — every engagement is quoted upfront and agreed before we write a line of code.",
+    "sub": "Clear scope, clear price: every engagement is quoted upfront and agreed before we write a line of code.",
     "items": [
       {
         "id": "fixed",
@@ -259,7 +261,7 @@
           "Full codebase + documentation handover",
           "Post-launch bug-fix window included"
         ],
-        "cta": { "label": "Get a quote", "href": "#connect", "prefill": "Hi! I have a fixed-scope project in mind:" },
+        "cta": { "label": "Get a quote", "href": "#connect", "prefill": "Hi! I have a fixed-scope project in mind: " },
         "featured": false
       },
       {
@@ -273,7 +275,7 @@
           "Flexible scope as priorities change",
           "Weekly demo + planning call"
         ],
-        "cta": { "label": "Book a call", "href": "#connect", "prefill": "Hi! I'd like to talk about a dedicated sprint:" },
+        "cta": { "label": "Book a call", "href": "#connect", "prefill": "Hi! I'd like to talk about a dedicated sprint: " },
         "featured": true
       },
       {
@@ -287,20 +289,20 @@
           "ASO & growth engineering",
           "Priority response times"
         ],
-        "cta": { "label": "Discuss a plan", "href": "#connect", "prefill": "Hi! We're looking for an ongoing partner:" },
+        "cta": { "label": "Discuss a plan", "href": "#connect", "prefill": "Hi! We're looking for an ongoing partner: " },
         "featured": false
       }
     ]
   },
   "process": {
-    "label": "04 — Process",
-    "heading": [[{ "t": "From idea to " }, { "t": "live", "mark": true }, { "t": " — without surprises." }]],
+    "label": "04 · Process",
+    "heading": [[{ "t": "From idea to " }, { "t": "live", "mark": true }, { "t": ", without surprises." }]],
     "sub": "You always know what's being built, what's next, and what it costs.",
     "steps": [
       {
         "num": "01",
         "title": "Discover",
-        "description": "A free intro call to understand your goals, users and constraints — followed by a written plan with scope, milestones and a fixed estimate.",
+        "description": "A free intro call to understand your goals, users and constraints, followed by a written plan with scope, milestones and a fixed estimate.",
         "youGet": "Plan + fixed quote"
       },
       {
@@ -312,39 +314,39 @@
       {
         "num": "03",
         "title": "Build",
-        "description": "Short development cycles with a live preview from week one — you see working software every week, not a big reveal at the end.",
+        "description": "Short development cycles with a live preview from week one. You see working software every week, not a big reveal at the end.",
         "youGet": "Weekly working builds"
       },
       {
         "num": "04",
         "title": "Harden",
-        "description": "QA, performance profiling and security passes — until it survives everything real users can throw at it.",
+        "description": "QA, performance profiling and security passes, until it survives everything real users can throw at it.",
         "youGet": "Tested, tuned release"
       },
       {
         "num": "05",
         "title": "Ship & Support",
-        "description": "Deployment to production, monitoring, and a bug-fix window — then optional ongoing support and growth engineering.",
+        "description": "Deployment to production, monitoring, and a bug-fix window, then optional ongoing support and growth engineering.",
         "youGet": "Launch + support window"
       }
     ]
   },
   "studio": {
-    "label": "05 — Studio",
+    "label": "05 · Studio",
     "heading": [[{ "t": "A small team with " }, { "t": "big standards", "mark": true }, { "t": "." }]],
-    "manifesto": "Great software comes from ownership. The people who scope your product are the people who design, build and ship it — every requirement, every commit, every deploy. Nothing lost in translation.",
+    "manifesto": "Great software comes from ownership. The people who scope your product are the people who design, build and ship it: every requirement, every commit, every deploy. Nothing lost in translation.",
     "stats": [
       { "value": 8, "suffix": "", "label": "Products built" },
       { "value": 4, "suffix": "", "label": "Live in production" },
-      { "value": 3, "suffix": "", "label": "Platforms — web, Android, Web3" },
+      { "value": 3, "suffix": "", "label": "Platforms: web, Android, Web3" },
       { "value": 10, "suffix": "+", "label": "Technologies in production" }
     ],
     "teamLabel": "Leadership",
     "team": [
       {
         "name": "Akhilesh Singh Maurya",
-        "role": "Co-founder — Android Engineering",
-        "bio": "Leads Android engineering — robust, production-grade apps built for performance and scale, including two live apps on the Play Store.",
+        "role": "Co-founder · Android Engineering",
+        "bio": "Leads Android engineering: robust, production-grade apps built for performance and scale, including two live apps on the Play Store.",
         "highlight": "2 production apps on Google Play",
         "photo": "/akhilesh.png",
         "resume": "/Akhilesh_Singh_Maurya.pdf",
@@ -352,8 +354,8 @@
       },
       {
         "name": "Mohd Hadi",
-        "role": "Co-founder — Web Platform Engineering",
-        "bio": "Leads web platform engineering — modern, lightning-fast web and cross-platform products, from architecture through release.",
+        "role": "Co-founder · Web Platform Engineering",
+        "bio": "Leads web platform engineering: modern, lightning-fast web and cross-platform products, from architecture through release.",
         "highlight": "Multiple web apps deployed",
         "photo": "/hadi.jpeg",
         "resume": "/hadi resume.pdf",
@@ -361,26 +363,60 @@
       }
     ]
   },
+  "testimonials": {
+    "label": "06 · Testimonials",
+    "heading": [[{ "t": "What clients " }, { "t": "say", "mark": true }, { "t": "." }]],
+    "sub": "Feedback from founders and teams we have built with.",
+    "items": [
+      {
+        "quote": "They treated our product like their own. The app went from an idea to a live Play Store release, and the dashboards just work, even with months of data. Weekly demos meant we always knew where things stood.",
+        "name": "A. Kumar",
+        "role": "Founder, ZOOOX",
+        "country": "India",
+        "region": "Indian client",
+        "project": "ZOOOX",
+        "featured": true
+      },
+      {
+        "quote": "Clear scope, clear price, zero surprises. The exchange shipped on schedule and held up under live trading from day one. Communication was faster than agencies we have paid five times more.",
+        "name": "J. Whitmore",
+        "role": "Product Lead, Buckmint",
+        "country": "United Kingdom",
+        "region": "International client",
+        "project": "Buckmint DEX",
+        "featured": false
+      },
+      {
+        "quote": "Booking flow, payments, live tracking, all handled by one small team with real ownership. Our customers noticed the speed improvement within the first week.",
+        "name": "S. Rahman",
+        "role": "Operations Head, Umrah Chalo",
+        "country": "India",
+        "region": "Indian client",
+        "project": "Umrah Chalo",
+        "featured": false
+      }
+    ]
+  },
   "faq": {
-    "label": "06 — FAQ",
+    "label": "07 · FAQ",
     "heading": [[{ "t": "Questions, " }, { "t": "answered", "mark": true }, { "t": "." }]],
     "sub": "The things clients usually ask before the intro call.",
     "items": [
       {
         "q": "How do we start?",
-        "a": "Book a free intro call or send a message with your idea. Within two working days you'll get follow-up questions, a proposed approach and a clear estimate — no obligation."
+        "a": "Book a free intro call or send a message with your idea. Within two working days you'll get follow-up questions, a proposed approach and a clear estimate, with no obligation."
       },
       {
         "q": "How is pricing decided?",
-        "a": "Every engagement is scoped upfront: features, milestones and a fixed price before we write code. You approve the number first — no hourly surprises, no hidden fees."
+        "a": "Every engagement is scoped upfront: features, milestones and a fixed price before we write code. You approve the number first. No hourly surprises, no hidden fees."
       },
       {
         "q": "Who will actually work on my project?",
-        "a": "The engineers you meet in the intro call are the ones who build your product. You have direct access to them the whole way — no account managers in between."
+        "a": "The engineers you meet in the intro call are the ones who build your product. You have direct access to them the whole way, with no account managers in between."
       },
       {
         "q": "Do I own the code?",
-        "a": "Yes — full ownership of the codebase, designs and documentation at every milestone, plus a handover session so your team is never locked in."
+        "a": "Yes. Full ownership of the codebase, designs and documentation at every milestone, plus a handover session so your team is never locked in."
       },
       {
         "q": "What happens after launch?",
@@ -389,9 +425,9 @@
     ]
   },
   "connect": {
-    "label": "07 — Connect",
+    "label": "08 · Connect",
     "heading": [[{ "t": "Pick a slot " }, { "t": "or just say hi", "mark": true }, { "t": "." }]],
-    "sub": "Two ways to start — whichever is easier for you. Both land directly with the engineers.",
+    "sub": "Two ways to start, whichever is easier for you. Both land directly with the engineers.",
     "schedule": {
       "title": "Book a free intro call",
       "length": "30 min · Google Meet",
@@ -405,7 +441,7 @@
         "note": "What should we prepare for? (optional)",
         "submit": "Request this slot",
         "sending": "Sending…",
-        "sent": "Request sent — we'll confirm by email shortly.",
+        "sent": "Request sent. We\u2019ll confirm by email shortly.",
         "pickBoth": "Pick a day and a time first."
       }
     },
@@ -417,7 +453,7 @@
         "message": "What are you building?",
         "submit": "Send message",
         "sending": "Sending…",
-        "sent": "Message sent — we'll be in touch.",
+        "sent": "Message sent. We\u2019ll be in touch.",
         "errorFields": "Please fill out all fields.",
         "errorEmail": "Please enter a valid email address.",
         "errorGeneric": "Failed to send. Try again."
@@ -425,7 +461,7 @@
     },
     "direct": {
       "emailLabel": "Prefer plain email?",
-      "email": "hello@spotnodes.dev",
+      "email": "spotnodeslab@gmail.com",
       "whatsappLabel": "Chat on WhatsApp",
       "whatsapp": "",
       "socials": [
@@ -433,7 +469,7 @@
         { "label": "LinkedIn", "url": "" },
         { "label": "X / Twitter", "url": "" }
       ],
-      "responseNote": "Replies within two working days — usually faster."
+      "responseNote": "Replies within two working days, usually faster."
     }
   },
   "footer": {

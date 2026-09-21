@@ -67,7 +67,7 @@ function Scheduler() {
         type: "schedule-call",
         name: form.name,
         email: form.email,
-        message: `${form.note || "—"}\nSlot: ${days[dayIdx].full}, ${slot} ${cfg.timezone}`,
+        message: `${form.note || "(not provided)"}\nSlot: ${days[dayIdx].full}, ${slot} ${cfg.timezone}`,
         slot: `${days[dayIdx].iso} ${slot}`,
       });
       setStatus("done");
@@ -119,7 +119,7 @@ function Scheduler() {
         ) : (
           <motion.div key="picker" className="mt-6 flex flex-1 flex-col">
             {/* Day picker */}
-            <p className="label-mono">1 — Pick a day</p>
+            <p className="label-mono">1 · Pick a day</p>
             <div className="no-scrollbar -mx-1 mt-3 flex gap-2 overflow-x-auto px-1 pb-1">
               {days.slice(0, 10).map((d, i) => (
                 <button
@@ -141,7 +141,7 @@ function Scheduler() {
             </div>
 
             {/* Slot picker */}
-            <p className="label-mono mt-5">2 — Pick a time</p>
+            <p className="label-mono mt-5">2 · Pick a time</p>
             <div className="mt-3 grid grid-cols-4 gap-2">
               {cfg.slots.map((s) => (
                 <button
@@ -160,7 +160,7 @@ function Scheduler() {
             <p className="mt-2 text-[11px] text-faint">All times in {cfg.timezone}</p>
 
             {/* Details */}
-            <p className="label-mono mt-5">3 — Your details</p>
+            <p className="label-mono mt-5">3 · Your details</p>
             <form onSubmit={submit} className="mt-3 flex flex-col gap-2.5">
               <div className="grid gap-2.5 sm:grid-cols-2">
                 <input
@@ -284,7 +284,10 @@ function MessageCard() {
             type="email"
             placeholder={t.email}
             value={form.email}
-            onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+            onChange={(e) => {
+              setForm((f) => ({ ...f, email: e.target.value }));
+              if (status === "error") setStatus("idle");
+            }}
             disabled={status === "loading"}
             className={field}
             autoComplete="email"
@@ -296,7 +299,10 @@ function MessageCard() {
           rows={5}
           placeholder={t.message}
           value={form.message}
-          onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+          onChange={(e) => {
+            setForm((f) => ({ ...f, message: e.target.value }));
+            if (status === "error") setStatus("idle");
+          }}
           disabled={status === "loading"}
           className={`${field} resize-none flex-1`}
         />
@@ -315,7 +321,7 @@ function MessageCard() {
             status === "success" ? "bg-[#12805c] text-white" : "bg-ink text-white hover:bg-accent"
           }`}
         >
-          {status === "idle" && t.submit}
+          {(status === "idle" || status === "error") && t.submit}
           {status === "loading" && (
             <>
               {t.sending} <Loader2 className="h-4 w-4 animate-spin" />
