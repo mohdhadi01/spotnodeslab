@@ -205,7 +205,9 @@ function GalleryCard({ project, index, onOpen }) {
               src={project.phoneImage}
               alt={`${project.title} app screen`}
               loading="lazy"
-              className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              decoding="async"
+              decoding="async"
+              className="h-full w-full object-cover object-top will-change-transform transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
           </PhoneFrame>
         ) : (
@@ -215,7 +217,7 @@ function GalleryCard({ project, index, onOpen }) {
                 src={project.image}
                 alt={`${project.title} interface`}
                 loading="lazy"
-                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="h-full w-full object-cover object-top will-change-transform transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
             </div>
           </BrowserFrame>
@@ -309,7 +311,7 @@ export function Work() {
           onPointerUp={endDrag}
           onPointerLeave={endDrag}
           onClickCapture={onClickCapture}
-          className="no-scrollbar flex cursor-grab snap-x snap-mandatory items-start gap-6 overflow-x-auto scroll-smooth px-5 pb-2 md:px-8 [mask-image:linear-gradient(90deg,transparent,black_3%,black_97%,transparent)]"
+          className="no-scrollbar flex cursor-grab snap-x snap-mandatory items-start gap-6 overflow-x-auto px-5 pb-2 md:px-8 md:[mask-image:linear-gradient(90deg,transparent,black_3%,black_97%,transparent)]"
         >
           {data.work.featured.map((project, i) => (
             <GalleryCard key={project.id} project={project} index={i} onOpen={setSelected} />

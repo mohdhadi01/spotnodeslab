@@ -93,6 +93,7 @@ export function Studio() {
                       src={member.photo}
                       alt={member.name}
                       loading="lazy"
+                      decoding="async"
                       className="h-56 w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04] sm:h-full"
                     />
                   </div>

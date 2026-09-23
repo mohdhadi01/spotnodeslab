@@ -88,7 +88,7 @@
           "Automation that maximises cashback"
         ],
         "tech": ["React Native", "TypeScript", "GraphQL"],
-        "image": "/images/zooox.png",
+        "image": "/images/zooox.webp",
         "accent": "#7C5CFC",
         "links": [
           { "label": "Mobile app", "url": "https://play.google.com/store/apps/details?id=xyz.zooox&hl=en_IN", "type": "play" },
@@ -112,7 +112,7 @@
           "Dark-mode-first, fully responsive design"
         ],
         "tech": ["React.js", "TypeScript", "Redux", "Styled Components"],
-        "image": "/images/buckmintDex.png",
+        "image": "/images/buckmintDex.webp",
         "accent": "#26C281",
         "links": [{ "label": "Live exchange", "url": "https://exchange.buckmint.org/", "type": "live" }]
       },
@@ -133,7 +133,7 @@
           "Secure real-time backend data flow"
         ],
         "tech": ["Android", "AI", "Google Maps"],
-        "image": "/images/booktranspo.png",
+        "image": "/images/booktranspo.webp",
         "accent": "#E85C4A",
         "links": [
           { "label": "Play Store", "url": "https://play.google.com/store/apps/details?id=com.booktranspo.users&pcampaignid=web_share", "type": "play" }
@@ -155,7 +155,7 @@
           "Production-ready reliability"
         ],
         "tech": ["React.js", "MongoDB", "WebSockets"],
-        "image": "/images/umrahchalo.png",
+        "image": "/images/umrahchalo.webp",
         "accent": "#3E9B6C",
         "links": [{ "label": "Live website", "url": "https://www.umrachalo.com/", "type": "live" }]
       }
@@ -348,7 +348,7 @@
         "role": "Co-founder · Android Engineering",
         "bio": "Leads Android engineering: robust, production-grade apps built for performance and scale, including two live apps on the Play Store.",
         "highlight": "2 production apps on Google Play",
-        "photo": "/akhilesh.png",
+        "photo": "/akhilesh.webp",
         "resume": "/Akhilesh_Singh_Maurya.pdf",
         "portfolio": "https://akhileshdev.me"
       },

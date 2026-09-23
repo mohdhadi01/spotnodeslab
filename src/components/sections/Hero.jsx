@@ -24,8 +24,8 @@ function AvailabilityCard({ ready }) {
 
   return (
     <div className="relative">
-      {/* glow behind card */}
-      <div className="mesh-glow absolute -inset-8 rounded-[2.5rem] blur-2xl" aria-hidden="true" />
+      {/* soft glow behind card (gradient only: a blur layer here is expensive to scroll) */}
+      <div className="mesh-glow absolute -inset-6 rounded-[2.5rem] opacity-80" aria-hidden="true" />
 
       <motion.div {...pop(0)} className="card relative overflow-hidden p-6">
         <div className="flex items-center gap-3.5">

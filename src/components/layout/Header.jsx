@@ -39,7 +39,7 @@ export function Header() {
         transition={{ duration: 0.45, ease: EASE }}
         className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
           scrolled
-            ? "border-b border-line bg-bg/80 backdrop-blur-xl shadow-[0_1px_12px_rgba(16,19,25,0.04)]"
+            ? "border-b border-line bg-bg/85 backdrop-blur-md shadow-[0_1px_12px_rgba(16,19,25,0.04)]"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -47,7 +47,7 @@ export function Header() {
           <button
             onClick={() => go("#top")}
             className="group flex items-center gap-2.5"
-            aria-label="SpotNodes — back to top"
+            aria-label="SpotNodes: back to top"
           >
             <LogoMark className="h-5 w-5 text-ink transition-transform duration-500 group-hover:rotate-90" />
             <span className="font-display text-lg font-medium tracking-tight text-ink">
