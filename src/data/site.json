@@ -158,8 +158,37 @@
         ]
       },
       {
-        "id": "mysmartcampus",
+        "id": "booktranspo",
         "index": "02",
+        "title": "Book Transpo",
+        "category": "Logistics & Ride Booking App",
+        "status": "Live on Google Play",
+        "timeline": "",
+        "siteUrl": "Book Transpo · Google Play",
+        "device": "phone",
+        "image": "/images/booktranspo.webp",
+        "phoneImage": "/images/booktranspo-phone.png",
+        "summary": "Logistics and ride booking with live tracking, route optimisation and scalable booking workflows.",
+        "description": "A logistics and ride-booking platform engineered for real-time operations: live tracking, route optimisation and frictionless booking, with deep mapping integration for accurate navigation and location intelligence. Designed for both users and transport providers, backed by a secure real-time backend and a smooth, scalable data flow.",
+        "features": [
+          "Live tracking & route optimisation",
+          "Mapping-service navigation intelligence",
+          "Seamless, scalable booking workflows",
+          "Secure real-time backend data flow"
+        ],
+        "tech": [
+          "Android",
+          "AI",
+          "Google Maps"
+        ],
+        "accent": "#E85C4A",
+        "platforms": [
+          "mobile"
+        ]
+      },
+      {
+        "id": "mysmartcampus",
+        "index": "03",
         "title": "MySmartCampus ERP",
         "category": "School Management SaaS",
         "status": "In production",
@@ -193,7 +222,7 @@
       },
       {
         "id": "locoldeal",
-        "index": "03",
+        "index": "04",
         "title": "LocolDeal",
         "category": "Local Deals Marketplace",
         "status": "Live on Google Play",
@@ -226,7 +255,7 @@
       },
       {
         "id": "flipreader",
-        "index": "04",
+        "index": "05",
         "title": "FlipReader",
         "category": "Native PDF Engineering",
         "status": "Delivered · 5.0★ on Upwork",
@@ -259,7 +288,7 @@
       },
       {
         "id": "ssapsolar",
-        "index": "05",
+        "index": "06",
         "title": "SSAP Solar",
         "category": "Solar E-Commerce Ecosystem",
         "status": "Delivered",
@@ -292,7 +321,7 @@
       },
       {
         "id": "buckmint",
-        "index": "06",
+        "index": "07",
         "title": "Buckmint DEX",
         "category": "Web3 Trading Dashboard",
         "status": "UI live",
@@ -325,7 +354,7 @@
       },
       {
         "id": "zooox",
-        "index": "07",
+        "index": "08",
         "title": "ZOOOX AI",
         "category": "Consumer Finance App",
         "status": "Live on Google Play",
@@ -358,7 +387,7 @@
       },
       {
         "id": "occupancy",
-        "index": "08",
+        "index": "09",
         "title": "Restaurant Occupancy Dashboard",
         "category": "Real-Time Web Dashboard",
         "status": "Delivered · Softify Business Cloud",
@@ -429,15 +458,6 @@
           "React.js",
           "MongoDB",
           "WebSockets"
-        ]
-      },
-      {
-        "title": "Book Transpo",
-        "summary": "Logistics and ride booking with live tracking and route optimisation, live on Google Play.",
-        "tech": [
-          "Android",
-          "AI",
-          "Google Maps"
         ]
       },
       {
