@@ -1,35 +1,87 @@
 {
   "brand": {
-    "name": "SpotNodes",
-    "descriptor": "Software Engineering Studio"
+    "name": "SpotNodes Lab",
+    "descriptor": "Product Studio · Mobile, Web & Full-Stack"
   },
   "seo": {
-    "title": "SpotNodes | Software Engineering Studio",
-    "description": "SpotNodes designs, builds and ships web platforms, Android apps and Web3 products. Free intro call, clear fixed quotes, production-grade delivery."
+    "title": "SpotNodes Lab | Product Studio for Mobile Apps, Web Platforms & Full-Stack Systems",
+    "description": "SpotNodes Lab is a two-person product studio building mobile apps, web platforms and full-stack systems for clients in the US, India and beyond. From first commit to app-store release, with a 5.0 star Upwork rating."
   },
   "nav": [
-    { "label": "Work", "href": "#work" },
-    { "label": "Services", "href": "#services" },
-    { "label": "Pricing", "href": "#engagements" },
-    { "label": "Process", "href": "#process" },
-    { "label": "FAQ", "href": "#faq" },
-    { "label": "Connect", "href": "#connect" }
+    {
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "label": "Pricing",
+      "href": "#engagements"
+    },
+    {
+      "label": "Process",
+      "href": "#process"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    },
+    {
+      "label": "Connect",
+      "href": "#connect"
+    }
   ],
   "hero": {
-    "badge": "Now booking new projects",
+    "badge": "5.0★ on Upwork · Now booking new projects",
     "headline": [
-      [{ "t": "We design, build & ship" }],
-      [{ "t": "software that drives " }, { "t": "real growth", "mark": true }, { "t": "." }]
+      [
+        {
+          "t": "We design, build & ship"
+        }
+      ],
+      [
+        {
+          "t": "software that drives "
+        },
+        {
+          "t": "real growth",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
     ],
-    "sub": "Web platforms, Android apps and Web3 products, engineered end-to-end by a senior team, priced for growing businesses, and delivered on a schedule you can see.",
+    "sub": "SpotNodes Lab is a two-person product studio building mobile apps, web platforms and full-stack systems for clients in the US, India and beyond. We take products from first commit to app-store release: architecture, UI, APIs, integrations and launch.",
     "ctas": {
-      "primary": { "label": "Book a free intro call", "href": "#connect" },
-      "secondary": { "label": "Explore the work", "href": "#work" }
+      "primary": {
+        "label": "Book a free intro call",
+        "href": "#connect"
+      },
+      "secondary": {
+        "label": "Explore the work",
+        "href": "#work"
+      }
     },
     "stats": [
-      { "value": "8", "label": "Products shipped" },
-      { "value": "4", "label": "Live in production" },
-      { "value": "2d", "label": "Typical reply time" }
+      {
+        "value": "5.0★",
+        "label": "Upwork rating"
+      },
+      {
+        "value": "10+",
+        "label": "Products shipped"
+      },
+      {
+        "value": "2",
+        "label": "App stores, iOS & Android"
+      },
+      {
+        "value": "3",
+        "label": "Platforms: mobile, web, Web3"
+      }
     ],
     "card": {
       "title": "Free intro call",
@@ -39,215 +91,629 @@
       "cta": "Pick a slot"
     },
     "marquee": [
-      "Web Platforms",
-      "Android Apps",
       "React Native",
-      "Kotlin",
+      "Expo",
       "Next.js",
       "Node.js",
-      "Web3 Interfaces",
       "TypeScript",
-      "Product Engineering",
-      "Performance",
-      "ASO & Growth"
-    ]
-  },
-  "proof": {
-    "label": "Products we've taken live",
-    "items": [
-      "ZOOOX",
-      "Buckmint DEX",
-      "Book Transpo",
-      "Umrah Chalo",
-      "BidCraft Agent",
-      "MockInMinutes",
-      "Bag Buddy AI",
-      "Arena"
+      "MongoDB",
+      "Firebase",
+      "Razorpay Payments",
+      "WebSockets",
+      "AI / LLM Integrations",
+      "Privacy-First Engineering",
+      "Design Systems"
     ]
   },
   "work": {
     "label": "01 · Work",
-    "heading": [[{ "t": "Work that " }, { "t": "shipped", "mark": true }, { "t": "." }]],
-    "sub": "Products we've taken from first commit to real users. Open any card for the full story.",
-    "hint": "Drag to explore",
+    "heading": [
+      [
+        {
+          "t": "Shipped, not "
+        },
+        {
+          "t": "promised",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
+    ],
+    "sub": "Flagship client and company products, in the order we suggest you read them. Open any card for the full build.",
     "featured": [
       {
-        "id": "zooox",
+        "id": "leaguemaster",
         "index": "01",
-        "title": "ZOOOX",
-        "category": "Mobile & Web Product",
-        "siteUrl": "zooox.xyz",
+        "title": "FitNambi LeagueMaster",
+        "category": "Tournament Management App",
+        "status": "Live on App Store & Google Play",
+        "timeline": "2026",
+        "siteUrl": "App Store · Google Play",
         "device": "phone",
-        "phoneImage": "/images/zooox-phone.png",
-        "summary": "Cashback and spend analytics that turn everyday purchases into money back and clear insight.",
-        "description": "ZOOOX is a production-grade cashback and spend-analytics platform. It connects to a user's email, extracts transactions automatically and turns them into interactive dashboards, engineered to stay fast on large datasets and real-time updates, on mobile and web.",
+        "image": "/images/leaguemaster.png",
+        "phoneImage": "/images/leaguemaster-phone.png",
+        "summary": "Lets sports organizers run entire leagues: teams, scoring, payments and invites, from their phone.",
+        "description": "A tournament management platform where organizers run complete leagues from their phone. A generic multi-sport scoring engine supports Cricket, Football and Racket Sports, with secure paid registrations through Razorpay, deep-linked team invites and push notifications, plus offline SQLite storage so venues with poor networks never lose a match. One codebase, both app stores, shipped end to end.",
         "features": [
-          "Email-powered transaction extraction",
-          "Interactive cashback & spend dashboards",
-          "Real-time insights at large-dataset scale",
-          "Automation that maximises cashback"
+          "Tournament & match creation with full team/player management",
+          "Multi-sport scoring engine: Cricket, Football, Racket Sports",
+          "Secure online registrations via Razorpay",
+          "Live streaming & on-site verification flows on CameraKit",
+          "Deep-linked invites + FCM push notifications",
+          "Offline-first with SQLite for poor-network venues"
         ],
-        "tech": ["React Native", "TypeScript", "GraphQL"],
-        "image": "/images/zooox.webp",
-        "accent": "#7C5CFC",
-        "links": [
-          { "label": "Mobile app", "url": "https://play.google.com/store/apps/details?id=xyz.zooox&hl=en_IN", "type": "play" },
-          { "label": "Web platform", "url": "https://zooox.xyz/", "type": "live" }
+        "tech": [
+          "React Native",
+          "Expo",
+          "Redux Toolkit",
+          "SQLite",
+          "Firebase",
+          "Razorpay"
+        ],
+        "accent": "#2E63F6",
+        "links": [],
+        "platforms": [
+          "mobile"
+        ]
+      },
+      {
+        "id": "mysmartcampus",
+        "index": "02",
+        "title": "MySmartCampus ERP",
+        "category": "School Management SaaS",
+        "status": "In production",
+        "timeline": "2026",
+        "siteUrl": "mysmartcampus.in",
+        "device": "browser",
+        "image": "/images/mysmartcampus.png",
+        "summary": "Multi-tenant school ERP unifying admin, finance, academics, transport and communication across web and mobile.",
+        "description": "A multi-tenant school ERP with strict data isolation and dynamic RBAC across 30+ unified full-stack modules. The web panel covers Fees, Exams, Inventory and Timetables, while one multi-role mobile app serves Parents, Teachers, Students and Drivers. The standout engineering: a held-request location pipeline that routes live bus GPS in server memory only while a parent is actively tracking, so driver battery drain drops to zero and no location trails ever hit the database.",
+        "features": [
+          "Multi-tenant architecture, 30+ modules, dynamic RBAC",
+          "Web panel: Fees, Exams, Inventory, Timetables",
+          "One app, four roles: Parents, Teachers, Students, Drivers",
+          "On-demand live bus tracking with zero location storage",
+          "Offline read-cache Axios interceptor for network loss",
+          "JWT manager with request queueing; PDFKit/ExcelJS bulk documents"
+        ],
+        "tech": [
+          "Next.js",
+          "React Native",
+          "Node.js",
+          "TypeScript",
+          "MongoDB",
+          "Cloudflare R2"
+        ],
+        "accent": "#2E9BD6",
+        "links": [],
+        "platforms": [
+          "web",
+          "mobile"
+        ]
+      },
+      {
+        "id": "locoldeal",
+        "index": "03",
+        "title": "LocolDeal",
+        "category": "Local Deals Marketplace",
+        "status": "Live on Google Play",
+        "timeline": "2026",
+        "siteUrl": "play.google.com · LocolDeal",
+        "device": "phone",
+        "image": "/images/locoldeal.png",
+        "phoneImage": "/images/locoldeal-phone.png",
+        "summary": "Dual-role marketplace connecting shoppers with nearby local businesses, with built-in monetization.",
+        "description": "A marketplace with two sides in one app: a consumer shopping mode discovering deals from nearby businesses, and a partner mode where stores create, manage and renew coupons with registration, location management and banner uploads. Monetized through Google AdMob with dimension-locked wrappers for zero layout shift, and native Google Sign-In running inside the managed Expo workflow.",
+        "features": [
+          "Dual-role ecosystem: consumer + business partner in one app",
+          "Full coupon lifecycle: claim, save, redeem in-store",
+          "Partner side: store registration, banners, renewals",
+          "Reviews & ratings for local stores",
+          "AdMob monetization with zero layout shift"
+        ],
+        "tech": [
+          "React Native",
+          "Expo Router",
+          "TypeScript",
+          "Zustand",
+          "NativeWind",
+          "AdMob"
+        ],
+        "accent": "#E85C4A",
+        "links": [],
+        "platforms": [
+          "mobile"
+        ]
+      },
+      {
+        "id": "flipreader",
+        "index": "04",
+        "title": "FlipReader",
+        "category": "Native PDF Engineering",
+        "status": "Delivered · 5.0★ on Upwork",
+        "timeline": "2026",
+        "siteUrl": "Upwork delivery",
+        "device": "phone",
+        "image": "/images/flipreader.png",
+        "phoneImage": "/images/flipreader-phone.png",
+        "summary": "A React Native PDF reader with a fully custom native page-curl engine, deep in Swift and Kotlin.",
+        "description": "A PDF reader with a real page-curl animation written at the native layer: CoreGraphics on iOS Swift, and the Android PlayLikeCurl sine-wave mesh-distortion engine ported to Swift. Migrated from the classic ViewManager bridge to Nitro Modules, fully aligned with the React Native New Architecture. Windowed page rendering with aggressive caching keeps memory constant even on very large documents, and text search runs through a hidden pdfjs-dist WebView.",
+        "features": [
+          "Custom native page-curl: CoreGraphics/Swift + Kotlin",
+          "Nitro Modules migration to the New Architecture",
+          "Library, bookmarks, search, zoom, text highlighting",
+          "PDF text search via hidden pdfjs-dist WebView",
+          "Windowed rendering: constant memory on huge documents"
+        ],
+        "tech": [
+          "React Native",
+          "TypeScript",
+          "Nitro Modules",
+          "Swift",
+          "Kotlin",
+          "pdfjs-dist"
+        ],
+        "accent": "#12805C",
+        "links": [],
+        "platforms": [
+          "mobile"
+        ]
+      },
+      {
+        "id": "ssapsolar",
+        "index": "05",
+        "title": "SSAP Solar",
+        "category": "Solar E-Commerce Ecosystem",
+        "status": "Delivered",
+        "timeline": "2026",
+        "siteUrl": "ssapsolar.in",
+        "device": "browser",
+        "image": "/images/ssapsolar.png",
+        "summary": "Complete cross-platform ecosystem for a solar hardware business: checkout app, website, admin console and API.",
+        "description": "Replaced a read-only catalogue with real orders: a mobile checkout app with a 3-step flow, a public website, and a real-time admin console for inventory, leads and order states. The checkout API is idempotent per attempt so network drops can never create duplicate orders, stock decrements and order creation run inside MongoDB multi-document transactions, and every notification payload is persisted to an inbox before the ephemeral push fires, so updates are never lost.",
+        "features": [
+          "3-step mobile checkout with address & quote capture",
+          "Idempotent checkout API: no duplicate orders on network drops",
+          "MongoDB transactions around stock + order writes",
+          "Persistent notification inbox behind every push",
+          "Server-ranked Best Sellers, strict RBAC, server-side pagination"
+        ],
+        "tech": [
+          "React Native",
+          "React 19",
+          "Node.js",
+          "Express 5",
+          "MongoDB",
+          "TypeScript"
+        ],
+        "accent": "#B7791F",
+        "links": [],
+        "platforms": [
+          "web",
+          "mobile"
         ]
       },
       {
         "id": "buckmint",
-        "index": "02",
+        "index": "06",
         "title": "Buckmint DEX",
-        "category": "Web3 Trading Platform",
+        "category": "Web3 Trading Dashboard",
+        "status": "UI live",
+        "timeline": "Mar 2024 – May 2025",
         "siteUrl": "exchange.buckmint.org",
         "device": "browser",
-        "summary": "A decentralised exchange interface with wallet connection, live trading and portfolio tracking.",
-        "description": "A modern Web3 decentralised exchange: seamless wallet connection, token trading with dynamic token-aware charts, portfolio tracking with live P&L, and full transaction history. Built for real-time crypto trading with a responsive, dark-mode-first interface.",
-        "features": [
-          "Seamless Web3 wallet connection & auth",
-          "Real-time trading with dynamic charts",
-          "Portfolio tracking with live P&L",
-          "Transaction history with filtering & export",
-          "Dark-mode-first, fully responsive design"
-        ],
-        "tech": ["React.js", "TypeScript", "Redux", "Styled Components"],
         "image": "/images/buckmintDex.webp",
-        "accent": "#26C281",
-        "links": [{ "label": "Live exchange", "url": "https://exchange.buckmint.org/", "type": "live" }]
-      },
-      {
-        "id": "booktranspo",
-        "index": "03",
-        "title": "Book Transpo",
-        "category": "Android Logistics System",
-        "siteUrl": "booktranspo.app",
-        "device": "phone",
-        "phoneImage": "/images/booktranspo-phone.png",
-        "summary": "Logistics and ride booking with live tracking, route optimisation and scalable workflows.",
-        "description": "A logistics and ride-booking platform engineered for real-time operations: live tracking, route optimisation and frictionless booking, with deep mapping integration for accurate navigation and location intelligence, backed by a secure, real-time backend.",
+        "summary": "Company product: a decentralised exchange dashboard with wallet trading, portfolios and live charts.",
+        "description": "Core user flows for a decentralised exchange, built as founding team: MetaMask wallet connection, trading, portfolio and transaction history with token-aware TradingView charts, URL-driven pagination and token-aware formatting that loads thousands of trade records reliably. A performance overhaul replaced GIFs with Lottie, refactored SVGs into reusable components and pruned unused dependencies, cutting bundle size and load latency.",
         "features": [
-          "Live tracking & route optimisation",
-          "Mapping-service navigation intelligence",
-          "Seamless, scalable booking workflows",
-          "Secure real-time backend data flow"
+          "MetaMask wallet connection & trading flows",
+          "Token-aware TradingView charts",
+          "Portfolio + transaction history, thousands of records",
+          "Dark mode, responsive layouts",
+          "Perf overhaul: Lottie, SVG refactor, dependency pruning"
         ],
-        "tech": ["Android", "AI", "Google Maps"],
-        "image": "/images/booktranspo.webp",
-        "accent": "#E85C4A",
+        "tech": [
+          "React",
+          "TypeScript",
+          "Redux",
+          "TradingView",
+          "MetaMask",
+          "Lottie"
+        ],
+        "accent": "#26C281",
         "links": [
-          { "label": "Play Store", "url": "https://play.google.com/store/apps/details?id=com.booktranspo.users&pcampaignid=web_share", "type": "play" }
+          {
+            "label": "Live UI",
+            "url": "https://exchange.buckmint.org/",
+            "type": "live"
+          }
+        ],
+        "platforms": [
+          "web3",
+          "web"
         ]
       },
       {
-        "id": "umrahchalo",
-        "index": "04",
-        "title": "Umrah Chalo",
-        "category": "Production Web Platform",
-        "siteUrl": "umrachalo.com",
+        "id": "zooox",
+        "index": "07",
+        "title": "ZOOOX AI",
+        "category": "Consumer Finance App",
+        "status": "Live on Google Play",
+        "timeline": "May 2025 – Mar 2026",
+        "siteUrl": "zooox.xyz",
         "device": "browser",
-        "summary": "A deployed travel-booking platform built for seamless UX under real user traffic.",
-        "description": "A real-world travel platform for discovering and booking Umrah packages. Designed for clarity and responsiveness across devices, with a booking flow built for real traffic, production-ready from day one.",
+        "image": "/images/zooox.webp",
+        "summary": "Company product: consumer fintech app with AI spend analytics and a full in-app Gmail mailbox.",
+        "description": "Built the consumer app end to end as founding team: auth flows, deep linking, push notifications and interactive spend analytics with trend and category charts driving the cashback funnel. The standout is a Gmail OAuth integration with a custom MIME email decoding pipeline (Base64, UTF-8, quoted-printable) that renders full email content in-app like a proper mailbox. A typed GraphQL caching layer with Apollo + SWR cut redundant calls on low-end devices, and a Turborepo monorepo with shared libraries reduced duplication by about 35%.",
         "features": [
-          "Seamless booking UX for real traffic",
-          "Responsive performance across devices",
-          "Clean package discovery & booking flow",
-          "Production-ready reliability"
+          "Auth, deep linking, push notifications end to end",
+          "Interactive spend analytics driving the cashback funnel",
+          "Gmail OAuth + custom MIME decoding, full in-app mailbox",
+          "Apollo + SWR typed caching for low-end devices",
+          "Turborepo monorepo with shared libraries, ~35% less duplication"
         ],
-        "tech": ["React.js", "MongoDB", "WebSockets"],
-        "image": "/images/umrahchalo.webp",
-        "accent": "#3E9B6C",
-        "links": [{ "label": "Live website", "url": "https://www.umrachalo.com/", "type": "live" }]
+        "tech": [
+          "React Native",
+          "TypeScript",
+          "GraphQL",
+          "Apollo",
+          "Firebase",
+          "Redux Toolkit"
+        ],
+        "accent": "#7C5CFC",
+        "links": [
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=xyz.zooox&hl=en_IN",
+            "type": "play"
+          },
+          {
+            "label": "Web platform",
+            "url": "https://zooox.xyz/",
+            "type": "live"
+          }
+        ],
+        "platforms": [
+          "mobile",
+          "web"
+        ]
+      },
+      {
+        "id": "occupancy",
+        "index": "08",
+        "title": "Restaurant Occupancy Dashboard",
+        "category": "Real-Time Web Dashboard",
+        "status": "Delivered · Softify Business Cloud",
+        "timeline": "Apr – May 2026",
+        "siteUrl": "Softify Business Cloud",
+        "device": "browser",
+        "image": "/images/occupancy.png",
+        "summary": "Live operations dashboard: multi-camera HLS streaming, WebSocket occupancy and Recharts analytics.",
+        "description": "A live operations dashboard for restaurants: multi-camera HLS.js video streaming in-browser, WebSocket-driven table occupancy and service alerts that update instantly without reloads, and Recharts analytics for occupancy trends, sales and turnaround times. Forms are type-safe end to end with React Hook Form + Zod, auth + RBAC spans multiple staff roles across 10+ views on a Radix/shadcn component library, and managers get React Native screens on iOS and Android. Component hierarchy and state management were tuned to prevent re-renders during high-frequency WebSocket bursts.",
+        "features": [
+          "Multi-camera HLS.js streaming in-browser",
+          "WebSocket table occupancy + service alerts, no reloads",
+          "Recharts analytics: occupancy, sales, turnaround",
+          "Type-safe forms, auth + RBAC across 10+ views",
+          "Manager screens in React Native for iOS & Android"
+        ],
+        "tech": [
+          "React 19",
+          "Vite",
+          "Tailwind v4",
+          "shadcn/ui",
+          "WebSockets",
+          "HLS.js"
+        ],
+        "accent": "#E8A13C",
+        "links": [],
+        "platforms": [
+          "web"
+        ]
       }
     ],
-    "archiveLabel": "More builds & experiments",
+    "archiveLabel": "Product builds · independent",
     "archive": [
       {
-        "title": "BidCraft Agent",
-        "summary": "AI-powered RFP responder for intelligent document workflows and generation.",
-        "tech": ["React Native", "Firebase", "AI", "PDF ingestion"],
+        "title": "MockInMinutes",
+        "summary": "AI interview assistant: TTS asks, STT captures, Groq returns real-time feedback. 500+ downloads.",
+        "tech": [
+          "React Native",
+          "Groq AI",
+          "Firebase",
+          "TTS/STT"
+        ],
         "links": [
-          { "label": "App", "url": "https://drive.google.com/drive/folders/1EV98jy2Hsh90v3Z3aENWw1hMH0LxbJyf", "type": "app" },
-          { "label": "GitHub", "url": "https://github.com/Akhilesh-va/BidCraft-Agent-App", "type": "github" }
+          {
+            "label": "App",
+            "url": "https://drive.google.com/drive/folders/1EV98jy2Hsh90v3Z3aENWw1hMH0LxbJyf",
+            "type": "app"
+          }
         ]
       },
       {
-        "title": "MockInMinutes",
-        "summary": "AI interview assistant delivering real-time, voice-based mock interactions.",
-        "tech": ["React Native", "AI engine", "Voice sync"],
+        "title": "BidCraft",
+        "summary": "Agentic RFP responder: vendors upload tender documents, AI drafts the proposal. Open-source backend.",
+        "tech": [
+          "React Native",
+          "Firebase",
+          "REST"
+        ],
         "links": [
-          { "label": "App", "url": "https://drive.google.com/drive/folders/1EV98jy2Hsh90v3Z3aENWw1hMH0LxbJyf", "type": "app" }
+          {
+            "label": "GitHub",
+            "url": "https://github.com/Akhilesh-va/BidCraft-Agent-App",
+            "type": "github"
+          }
+        ]
+      },
+      {
+        "title": "Riba Purifier",
+        "summary": "Privacy-first statement parser: decrypts password-protected bank PDFs 100% in the browser.",
+        "tech": [
+          "React",
+          "TypeScript",
+          "PDF.js"
+        ],
+        "links": []
+      }
+    ],
+    "earlierLabel": "Earlier client work",
+    "earlier": [
+      {
+        "title": "Umrah Chalo",
+        "summary": "Travel-booking platform for Umrah packages, serving real user traffic in production.",
+        "tech": [
+          "React.js",
+          "MongoDB",
+          "WebSockets"
+        ],
+        "links": [
+          {
+            "label": "Live",
+            "url": "https://www.umrachalo.com/",
+            "type": "live"
+          }
+        ]
+      },
+      {
+        "title": "Book Transpo",
+        "summary": "Logistics and ride booking with live tracking and route optimisation, live on Google Play.",
+        "tech": [
+          "Android",
+          "AI",
+          "Google Maps"
+        ],
+        "links": [
+          {
+            "label": "Play Store",
+            "url": "https://play.google.com/store/apps/details?id=com.booktranspo.users&pcampaignid=web_share",
+            "type": "play"
+          }
         ]
       },
       {
         "title": "Your Bag Buddy AI",
-        "summary": "Smart travel checklist generating highly optimised packing manifests via AI.",
-        "tech": ["Kotlin", "Jetpack Compose", "Smart AI"],
+        "summary": "Smart travel checklist generating optimised packing manifests via AI.",
+        "tech": [
+          "Kotlin",
+          "Jetpack Compose"
+        ],
         "links": [
-          { "label": "GitHub", "url": "https://github.com/Akhilesh-va/YourBagBuddyAI", "type": "github" }
+          {
+            "label": "GitHub",
+            "url": "https://github.com/Akhilesh-va/YourBagBuddyAI",
+            "type": "github"
+          }
         ]
       },
       {
         "title": "Arena",
         "summary": "Community-driven Android architecture for live, real-time gamer messaging.",
-        "tech": ["Firebase sync", "Real-time architecture"],
+        "tech": [
+          "Firebase sync",
+          "Real-time"
+        ],
         "links": [
-          { "label": "GitHub", "url": "https://github.com/Akhilesh-va/Arena-", "type": "github" }
+          {
+            "label": "GitHub",
+            "url": "https://github.com/Akhilesh-va/Arena-",
+            "type": "github"
+          }
         ]
+      }
+    ],
+    "sideLabel": "Lab notes · side engineering",
+    "sideEngineering": [
+      {
+        "title": "Bank-statement parser tool",
+        "note": "TypeScript/Vite tool parsing Axis, Kotak, Canara & SBI statements, header-aware column mapping"
+      },
+      {
+        "title": "Turborepo monorepo backend",
+        "note": "Audit logging with tRPC, Drizzle ORM, Postgres & MongoDB across campus routes"
+      },
+      {
+        "title": "Travel agency website",
+        "note": "Next.js 14, Tailwind CSS, Framer Motion"
+      },
+      {
+        "title": "Multi-tenant dashboard",
+        "note": "Staff provisioning (Owner/Manager/Landlord) with granular feature permissions"
+      },
+      {
+        "title": "Ecosystem research",
+        "note": "React/RN deep-dives: Signals incompatibility, Yoga layout limits, Error Boundary behavior"
+      }
+    ],
+    "filters": [
+      {
+        "id": "all",
+        "label": "All work"
+      },
+      {
+        "id": "mobile",
+        "label": "Mobile Apps"
+      },
+      {
+        "id": "web",
+        "label": "Web Platforms"
+      },
+      {
+        "id": "web3",
+        "label": "Web3"
       }
     ]
   },
   "ctaBand": {
     "heading": "Have something in mind?",
     "sub": "Get a plan and a clear estimate for it. Free, within two working days.",
-    "cta": { "label": "Book a free intro call", "href": "#connect" }
+    "cta": {
+      "label": "Book a free intro call",
+      "href": "#connect"
+    }
   },
   "services": {
     "label": "02 · Services",
-    "heading": [[{ "t": "Everything it takes " }, { "t": "to launch", "mark": true }, { "t": "." }]],
+    "heading": [
+      [
+        {
+          "t": "Everything it takes "
+        },
+        {
+          "t": "to launch",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
+    ],
     "sub": "One team for the whole journey, or plug us into the part you need.",
     "items": [
       {
+        "id": "mobile",
+        "icon": "smartphone",
+        "title": "Mobile App Development",
+        "tagline": "React Native · Expo",
+        "description": "iOS and Android from one codebase, shipped to both stores. Payments, offline-first data, push, native modules when you need them.",
+        "stack": [
+          "React Native",
+          "Expo",
+          "Kotlin",
+          "Swift"
+        ]
+      },
+      {
         "id": "web",
         "icon": "globe",
-        "title": "Web Engineering",
-        "tagline": "Fast, modern platforms",
-        "description": "Marketing sites, dashboards and full platforms: fast to load, fast to use, and built on stacks your team can grow with.",
-        "stack": ["React", "Next.js", "Node.js", "MongoDB", "PostgreSQL"],
-        "representative": "ZOOOX"
+        "title": "Full-Stack Web Platforms",
+        "tagline": "Next.js · React · Node",
+        "description": "Marketing sites, dashboards and complete platforms on stacks your team can grow with.",
+        "stack": [
+          "Next.js",
+          "React",
+          "Node.js",
+          "TypeScript"
+        ]
       },
       {
-        "id": "app",
-        "icon": "smartphone",
-        "title": "App Engineering",
-        "tagline": "Native & cross-platform",
-        "description": "Android and cross-platform apps engineered for performance and store readiness, from first build to Play Store release.",
-        "stack": ["Kotlin", "Jetpack Compose", "React Native", "REST APIs"],
-        "representative": "Book Transpo"
+        "id": "saas",
+        "icon": "server",
+        "title": "SaaS & ERP Systems",
+        "tagline": "Multi-tenant by design",
+        "description": "Multi-tenant architectures with strict data isolation, RBAC and billing-ready foundations, proven across 30+ modules.",
+        "stack": [
+          "Multi-tenancy",
+          "RBAC",
+          "MongoDB",
+          "PostgreSQL"
+        ]
       },
       {
-        "id": "game",
-        "icon": "gamepad",
-        "title": "Game Engineering",
-        "tagline": "Interactive 3D & WebGL",
-        "description": "Browser-based games and 3D experiences with real-time rendering, physics and the performance budgets to match.",
-        "stack": ["Three.js", "Unity", "WebGL", "Physics engines"],
-        "representative": null
+        "id": "ecom",
+        "icon": "cart",
+        "title": "E-commerce & Payments",
+        "tagline": "Checkout that never double-charges",
+        "description": "Idempotent checkouts, transactional inventory, Razorpay integrations and admin consoles for real order operations.",
+        "stack": [
+          "Razorpay",
+          "MongoDB tx",
+          "Admin consoles",
+          "Quotes"
+        ]
       },
       {
-        "id": "aso",
-        "icon": "trending",
-        "title": "ASO & Growth",
-        "tagline": "Get found, get installs",
-        "description": "Store listings, keyword strategy and conversion tuning, because getting found is engineering too.",
-        "stack": ["Keyword strategy", "Store listing", "Conversion", "Analytics"],
-        "representative": null
+        "id": "realtime",
+        "icon": "activity",
+        "title": "Real-Time & Streaming",
+        "tagline": "Dashboards · Live GPS · Video",
+        "description": "WebSocket-driven dashboards, live location pipelines and HLS multi-camera streaming that survive production traffic.",
+        "stack": [
+          "WebSockets",
+          "HLS.js",
+          "Live GPS",
+          "Recharts"
+        ]
+      },
+      {
+        "id": "ai",
+        "icon": "sparkles",
+        "title": "AI / LLM Integrations",
+        "tagline": "Voice · Agents · Documents",
+        "description": "Groq-powered voice assistants, agentic document workflows and AI features wired into real product flows.",
+        "stack": [
+          "Groq",
+          "TTS/STT",
+          "Agents",
+          "RAG-ready"
+        ]
+      },
+      {
+        "id": "privacy",
+        "icon": "shield",
+        "title": "Privacy-First Engineering",
+        "tagline": "Data that never leaks",
+        "description": "In-browser decryption, zero-trail location routing, minimal-data architectures for fintech and sensitive products.",
+        "stack": [
+          "Client-side crypto",
+          "Zero-retention",
+          "GDPR-minded"
+        ]
+      },
+      {
+        "id": "design",
+        "icon": "palette",
+        "title": "Design Systems",
+        "tagline": "Typed tokens to screens",
+        "description": "Component libraries and typed design tokens that keep large products consistent as they scale.",
+        "stack": [
+          "Radix/shadcn",
+          "Tailwind",
+          "Typed tokens",
+          "WCAG"
+        ]
       }
     ]
   },
   "engagements": {
     "label": "03 · Pricing",
-    "heading": [[{ "t": "Ways to " }, { "t": "work with us", "mark": true }, { "t": "." }]],
+    "heading": [
+      [
+        {
+          "t": "Ways to "
+        },
+        {
+          "t": "work with us",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
+    ],
     "sub": "Clear scope, clear price: every engagement is quoted upfront and agreed before we write a line of code.",
     "items": [
       {
@@ -261,7 +727,11 @@
           "Full codebase + documentation handover",
           "Post-launch bug-fix window included"
         ],
-        "cta": { "label": "Get a quote", "href": "#connect", "prefill": "Hi! I have a fixed-scope project in mind: " },
+        "cta": {
+          "label": "Get a quote",
+          "href": "#connect",
+          "prefill": "Hi! I have a fixed-scope project in mind: "
+        },
         "featured": false
       },
       {
@@ -275,7 +745,11 @@
           "Flexible scope as priorities change",
           "Weekly demo + planning call"
         ],
-        "cta": { "label": "Book a call", "href": "#connect", "prefill": "Hi! I'd like to talk about a dedicated sprint: " },
+        "cta": {
+          "label": "Book a call",
+          "href": "#connect",
+          "prefill": "Hi! I'd like to talk about a dedicated sprint: "
+        },
         "featured": true
       },
       {
@@ -286,17 +760,34 @@
         "features": [
           "Maintenance & performance monitoring",
           "Continuous feature improvements",
-          "ASO & growth engineering",
+          "Store optimization & growth engineering",
           "Priority response times"
         ],
-        "cta": { "label": "Discuss a plan", "href": "#connect", "prefill": "Hi! We're looking for an ongoing partner: " },
+        "cta": {
+          "label": "Discuss a plan",
+          "href": "#connect",
+          "prefill": "Hi! We're looking for an ongoing partner: "
+        },
         "featured": false
       }
     ]
   },
   "process": {
     "label": "04 · Process",
-    "heading": [[{ "t": "From idea to " }, { "t": "live", "mark": true }, { "t": ", without surprises." }]],
+    "heading": [
+      [
+        {
+          "t": "From idea to "
+        },
+        {
+          "t": "live",
+          "mark": true
+        },
+        {
+          "t": ", without surprises."
+        }
+      ]
+    ],
     "sub": "You always know what's being built, what's next, and what it costs.",
     "steps": [
       {
@@ -326,27 +817,56 @@
       {
         "num": "05",
         "title": "Ship & Support",
-        "description": "Deployment to production, monitoring, and a bug-fix window, then optional ongoing support and growth engineering.",
+        "description": "Deployment, store submission, monitoring and a bug-fix window, then optional ongoing support and growth engineering.",
         "youGet": "Launch + support window"
       }
     ]
   },
   "studio": {
     "label": "05 · Studio",
-    "heading": [[{ "t": "A small team with " }, { "t": "big standards", "mark": true }, { "t": "." }]],
-    "manifesto": "Great software comes from ownership. The people who scope your product are the people who design, build and ship it: every requirement, every commit, every deploy. Nothing lost in translation.",
-    "stats": [
-      { "value": 8, "suffix": "", "label": "Products built" },
-      { "value": 4, "suffix": "", "label": "Live in production" },
-      { "value": 3, "suffix": "", "label": "Platforms: web, Android, Web3" },
-      { "value": 10, "suffix": "+", "label": "Technologies in production" }
+    "heading": [
+      [
+        {
+          "t": "A small team with "
+        },
+        {
+          "t": "big standards",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
     ],
-    "teamLabel": "Leadership",
+    "manifesto": "Great software comes from ownership. The people who scope your product are the people who design, build and ship it, every requirement, every commit, every deploy. We have shipped our own products too, a Web3 trading desk and a consumer fintech app, so client work gets founder-level ownership. Nothing lost in translation.",
+    "stats": [
+      {
+        "value": 5,
+        "suffix": "★",
+        "label": "Upwork rating"
+      },
+      {
+        "value": 10,
+        "suffix": "+",
+        "label": "Products shipped"
+      },
+      {
+        "value": 30,
+        "suffix": "+",
+        "label": "ERP modules in production"
+      },
+      {
+        "value": 500,
+        "suffix": "+",
+        "label": "Downloads on MockInMinutes"
+      }
+    ],
+    "teamLabel": "Founders",
     "team": [
       {
         "name": "Akhilesh Singh Maurya",
-        "role": "Co-founder · Android Engineering",
-        "bio": "Leads Android engineering: robust, production-grade apps built for performance and scale, including two live apps on the Play Store.",
+        "role": "Co-founder · Android & Mobile Engineering",
+        "bio": "Leads mobile and Android engineering: production apps on both stores, native modules in Swift and Kotlin, and the Nitro New-Architecture work behind FlipReader.",
         "highlight": "2 production apps on Google Play",
         "photo": "/akhilesh.webp",
         "resume": "/Akhilesh_Singh_Maurya.pdf",
@@ -355,7 +875,7 @@
       {
         "name": "Mohd Hadi",
         "role": "Co-founder · Web Platform Engineering",
-        "bio": "Leads web platform engineering: modern, lightning-fast web and cross-platform products, from architecture through release.",
+        "bio": "Leads web platform engineering: Next.js SaaS, real-time dashboards, e-commerce systems and the ZOOOX web platform, from architecture through release.",
         "highlight": "Multiple web apps deployed",
         "photo": "/hadi.jpeg",
         "resume": "/hadi resume.pdf",
@@ -365,7 +885,20 @@
   },
   "testimonials": {
     "label": "06 · Testimonials",
-    "heading": [[{ "t": "What clients " }, { "t": "say", "mark": true }, { "t": "." }]],
+    "heading": [
+      [
+        {
+          "t": "What clients "
+        },
+        {
+          "t": "say",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
+    ],
     "sub": "Feedback from founders and teams we have built with.",
     "items": [
       {
@@ -399,7 +932,20 @@
   },
   "faq": {
     "label": "07 · FAQ",
-    "heading": [[{ "t": "Questions, " }, { "t": "answered", "mark": true }, { "t": "." }]],
+    "heading": [
+      [
+        {
+          "t": "Questions, "
+        },
+        {
+          "t": "answered",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
+    ],
     "sub": "The things clients usually ask before the intro call.",
     "items": [
       {
@@ -419,20 +965,42 @@
         "a": "Yes. Full ownership of the codebase, designs and documentation at every milestone, plus a handover session so your team is never locked in."
       },
       {
+        "q": "Have you shipped to the app stores?",
+        "a": "Yes. LeagueMaster is live on both the App Store and Google Play, LocolDeal and ZOOOX are live on Google Play, and FlipReader was an Upwork delivery rated 5.0 stars. We handle the full submission pipeline."
+      },
+      {
         "q": "What happens after launch?",
-        "a": "Every build ships with a bug-fix window. After that, ongoing support, maintenance and growth engineering (ASO, performance, new features) are available as a retainer."
+        "a": "Every build ships with a bug-fix window. After that, ongoing support, maintenance and growth engineering are available as a retainer."
       }
     ]
   },
   "connect": {
     "label": "08 · Connect",
-    "heading": [[{ "t": "Pick a slot " }, { "t": "or just say hi", "mark": true }, { "t": "." }]],
+    "heading": [
+      [
+        {
+          "t": "Pick a slot "
+        },
+        {
+          "t": "or just say hi",
+          "mark": true
+        },
+        {
+          "t": "."
+        }
+      ]
+    ],
     "sub": "Two ways to start, whichever is easier for you. Both land directly with the engineers.",
     "schedule": {
       "title": "Book a free intro call",
       "length": "30 min · Google Meet",
       "timezone": "IST (UTC+5:30)",
-      "slots": ["10:00", "11:30", "15:00", "17:00"],
+      "slots": [
+        "10:00",
+        "11:30",
+        "15:00",
+        "17:00"
+      ],
       "daysAhead": 14,
       "skipWeekend": true,
       "form": {
@@ -441,7 +1009,7 @@
         "note": "What should we prepare for? (optional)",
         "submit": "Request this slot",
         "sending": "Sending…",
-        "sent": "Request sent. We\u2019ll confirm by email shortly.",
+        "sent": "Request sent. We'll confirm by email shortly.",
         "pickBoth": "Pick a day and a time first."
       }
     },
@@ -453,7 +1021,7 @@
         "message": "What are you building?",
         "submit": "Send message",
         "sending": "Sending…",
-        "sent": "Message sent. We\u2019ll be in touch.",
+        "sent": "Message sent. We'll be in touch.",
         "errorFields": "Please fill out all fields.",
         "errorEmail": "Please enter a valid email address.",
         "errorGeneric": "Failed to send. Try again."
@@ -465,16 +1033,29 @@
       "whatsappLabel": "Chat on WhatsApp",
       "whatsapp": "",
       "socials": [
-        { "label": "GitHub", "url": "https://github.com/Akhilesh-va" },
-        { "label": "LinkedIn", "url": "" },
-        { "label": "X / Twitter", "url": "" }
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Akhilesh-va"
+        },
+        {
+          "label": "LinkedIn",
+          "url": ""
+        },
+        {
+          "label": "X / Twitter",
+          "url": ""
+        },
+        {
+          "label": "Upwork",
+          "url": ""
+        }
       ],
       "responseNote": "Replies within two working days, usually faster."
     }
   },
   "footer": {
     "tagline": "Software engineered for real growth.",
-    "location": "India · Working worldwide",
+    "location": "India · Clients in the US, India & beyond",
     "backToTop": "Back to top"
   }
 }

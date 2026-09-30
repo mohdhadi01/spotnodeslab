@@ -25,8 +25,11 @@ and the UI updates — no component changes needed.
 | `hero` | Badge, headline, sub, CTAs, stat chips, the "Free intro call" availability card, capability marquee |
 | `hero.headline` | Array of lines; each line is an array of segments. Add `"mark": true` to a segment for the blue highlighter accent |
 | `hero.card` | The hero booking card — title, length, note, timezone |
-| `work.featured` | Drag-gallery cards shown in browser frames (`siteUrl` appears in the fake address bar). Click → case modal |
-| `work.archive` | The "More builds & experiments" grid |
+| `work.featured` | Flagship case-study cards in the filterable grid. `platforms` (mobile/web/web3) drives the filter tabs, `device: "phone"` + `phoneImage` render a phone mockup (fallback: browser frame), `siteUrl` appears in the fake address bar, `status`/`timeline` show as chips. Missing screenshots render a tinted blueprint wireframe. Click → case modal |
+| `work.filters` | The platform filter tabs (id + label) |
+| `work.archive` | Independent product builds grid |
+| `work.earlier` | Earlier client work grid |
+| `work.sideEngineering` | The compact "Lab notes" list |
 | `ctaBand` | The blue "Have something in mind?" banner |
 | `services.items` | Bento cards — title, tagline, description, stack chips, icon (`globe\|smartphone\|gamepad\|trending`) |
 | `engagements.items` | Pricing cards (`featured: true` gets the accent border + "Most popular"). `cta.prefill` pre-fills the message form |

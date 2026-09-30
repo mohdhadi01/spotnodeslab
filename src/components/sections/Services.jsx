@@ -1,14 +1,29 @@
 import React from "react";
-import { ArrowUpRight, Gamepad2, Globe, Smartphone, TrendingUp } from "lucide-react";
+import {
+  Activity,
+  Globe,
+  Palette,
+  Server,
+  Shield,
+  ShoppingBag,
+  Smartphone,
+  Sparkles,
+} from "lucide-react";
 import data from "../../data/site.json";
 import { SectionIntro, Reveal } from "../ui/Reveal";
-import { useScrollTo } from "../../lib/useScrollTo";
 
-const ICONS = { globe: Globe, smartphone: Smartphone, gamepad: Gamepad2, trending: TrendingUp };
+const ICONS = {
+  globe: Globe,
+  smartphone: Smartphone,
+  server: Server,
+  cart: ShoppingBag,
+  activity: Activity,
+  sparkles: Sparkles,
+  shield: Shield,
+  palette: Palette,
+};
 
 export function Services() {
-  const scrollTo = useScrollTo();
-
   return (
     <section id="services" className="relative bg-surface-2/60 py-16 md:py-24">
       <div className="container-x">
@@ -43,16 +58,6 @@ export function Services() {
                       </span>
                     ))}
                   </div>
-
-                  {service.representative && (
-                    <button
-                      onClick={() => scrollTo("#work")}
-                      className="group/link mt-5 inline-flex w-fit items-center gap-1.5 border-t border-line pt-4 text-xs font-bold text-ink"
-                    >
-                      <span className="u-underline">Seen in {service.representative}</span>
-                      <ArrowUpRight className="h-3.5 w-3.5 text-accent transition-transform duration-300 group-hover/link:rotate-45" />
-                    </button>
-                  )}
                 </article>
               </Reveal>
             );
