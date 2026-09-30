@@ -470,23 +470,25 @@ function CompactGrid({ items, label }) {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-2">
-                  {item.links.map((l) => {
-                    const Icon = LINK_ICONS[l.type] ?? ExternalLink;
-                    return (
-                      <a
-                        key={l.url}
-                        href={l.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-xs font-bold text-muted transition-colors duration-300 hover:border-ink/30 hover:text-ink"
-                      >
-                        <Icon className="h-3 w-3" />
-                        {l.label}
-                      </a>
-                    );
-                  })}
-                </div>
+                {item.links?.length > 0 && (
+                  <div className="flex gap-2">
+                    {item.links.map((l) => {
+                      const Icon = LINK_ICONS[l.type] ?? ExternalLink;
+                      return (
+                        <a
+                          key={l.url}
+                          href={l.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center gap-1.5 rounded-full border border-line px-3.5 py-1.5 text-xs font-bold text-muted transition-colors duration-300 hover:border-ink/30 hover:text-ink"
+                        >
+                          <Icon className="h-3 w-3" />
+                          {l.label}
+                        </a>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             </div>
           </Reveal>

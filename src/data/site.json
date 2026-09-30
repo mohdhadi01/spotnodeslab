@@ -153,7 +153,6 @@
           "Razorpay"
         ],
         "accent": "#2E63F6",
-        "links": [],
         "platforms": [
           "mobile"
         ]
@@ -187,7 +186,6 @@
           "Cloudflare R2"
         ],
         "accent": "#2E9BD6",
-        "links": [],
         "platforms": [
           "web",
           "mobile"
@@ -222,7 +220,6 @@
           "AdMob"
         ],
         "accent": "#E85C4A",
-        "links": [],
         "platforms": [
           "mobile"
         ]
@@ -256,7 +253,6 @@
           "pdfjs-dist"
         ],
         "accent": "#12805C",
-        "links": [],
         "platforms": [
           "mobile"
         ]
@@ -289,7 +285,6 @@
           "TypeScript"
         ],
         "accent": "#B7791F",
-        "links": [],
         "platforms": [
           "web",
           "mobile"
@@ -323,13 +318,6 @@
           "Lottie"
         ],
         "accent": "#26C281",
-        "links": [
-          {
-            "label": "Live UI",
-            "url": "https://exchange.buckmint.org/",
-            "type": "live"
-          }
-        ],
         "platforms": [
           "web3",
           "web"
@@ -363,18 +351,6 @@
           "Redux Toolkit"
         ],
         "accent": "#7C5CFC",
-        "links": [
-          {
-            "label": "Google Play",
-            "url": "https://play.google.com/store/apps/details?id=xyz.zooox&hl=en_IN",
-            "type": "play"
-          },
-          {
-            "label": "Web platform",
-            "url": "https://zooox.xyz/",
-            "type": "live"
-          }
-        ],
         "platforms": [
           "mobile",
           "web"
@@ -408,7 +384,6 @@
           "HLS.js"
         ],
         "accent": "#E8A13C",
-        "links": [],
         "platforms": [
           "web"
         ]
@@ -424,13 +399,6 @@
           "Groq AI",
           "Firebase",
           "TTS/STT"
-        ],
-        "links": [
-          {
-            "label": "App",
-            "url": "https://drive.google.com/drive/folders/1EV98jy2Hsh90v3Z3aENWw1hMH0LxbJyf",
-            "type": "app"
-          }
         ]
       },
       {
@@ -440,13 +408,6 @@
           "React Native",
           "Firebase",
           "REST"
-        ],
-        "links": [
-          {
-            "label": "GitHub",
-            "url": "https://github.com/Akhilesh-va/BidCraft-Agent-App",
-            "type": "github"
-          }
         ]
       },
       {
@@ -456,8 +417,7 @@
           "React",
           "TypeScript",
           "PDF.js"
-        ],
-        "links": []
+        ]
       }
     ],
     "earlierLabel": "Earlier client work",
@@ -469,13 +429,6 @@
           "React.js",
           "MongoDB",
           "WebSockets"
-        ],
-        "links": [
-          {
-            "label": "Live",
-            "url": "https://www.umrachalo.com/",
-            "type": "live"
-          }
         ]
       },
       {
@@ -485,13 +438,6 @@
           "Android",
           "AI",
           "Google Maps"
-        ],
-        "links": [
-          {
-            "label": "Play Store",
-            "url": "https://play.google.com/store/apps/details?id=com.booktranspo.users&pcampaignid=web_share",
-            "type": "play"
-          }
         ]
       },
       {
@@ -500,13 +446,6 @@
         "tech": [
           "Kotlin",
           "Jetpack Compose"
-        ],
-        "links": [
-          {
-            "label": "GitHub",
-            "url": "https://github.com/Akhilesh-va/YourBagBuddyAI",
-            "type": "github"
-          }
         ]
       },
       {
@@ -515,13 +454,6 @@
         "tech": [
           "Firebase sync",
           "Real-time"
-        ],
-        "links": [
-          {
-            "label": "GitHub",
-            "url": "https://github.com/Akhilesh-va/Arena-",
-            "type": "github"
-          }
         ]
       }
     ],
