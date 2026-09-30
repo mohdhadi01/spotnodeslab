@@ -418,65 +418,6 @@
         ]
       }
     ],
-    "archiveLabel": "Product builds · independent",
-    "archive": [
-      {
-        "title": "MockInMinutes",
-        "summary": "AI interview assistant: TTS asks, STT captures, Groq returns real-time feedback. 500+ downloads.",
-        "tech": [
-          "React Native",
-          "Groq AI",
-          "Firebase",
-          "TTS/STT"
-        ]
-      },
-      {
-        "title": "BidCraft",
-        "summary": "Agentic RFP responder: vendors upload tender documents, AI drafts the proposal. Open-source backend.",
-        "tech": [
-          "React Native",
-          "Firebase",
-          "REST"
-        ]
-      },
-      {
-        "title": "Riba Purifier",
-        "summary": "Privacy-first statement parser: decrypts password-protected bank PDFs 100% in the browser.",
-        "tech": [
-          "React",
-          "TypeScript",
-          "PDF.js"
-        ]
-      }
-    ],
-    "earlierLabel": "Earlier client work",
-    "earlier": [
-      {
-        "title": "Umrah Chalo",
-        "summary": "Travel-booking platform for Umrah packages, serving real user traffic in production.",
-        "tech": [
-          "React.js",
-          "MongoDB",
-          "WebSockets"
-        ]
-      },
-      {
-        "title": "Your Bag Buddy AI",
-        "summary": "Smart travel checklist generating optimised packing manifests via AI.",
-        "tech": [
-          "Kotlin",
-          "Jetpack Compose"
-        ]
-      },
-      {
-        "title": "Arena",
-        "summary": "Community-driven Android architecture for live, real-time gamer messaging.",
-        "tech": [
-          "Firebase sync",
-          "Real-time"
-        ]
-      }
-    ],
     "sideLabel": "Lab notes · side engineering",
     "sideEngineering": [
       {
@@ -517,7 +458,69 @@
         "id": "web3",
         "label": "Web3"
       }
-    ]
+    ],
+    "more": [
+      {
+        "title": "MockInMinutes",
+        "summary": "AI interview assistant: TTS asks, STT captures, Groq returns real-time feedback. 500+ downloads.",
+        "tech": [
+          "React Native",
+          "Groq AI",
+          "Firebase",
+          "TTS/STT"
+        ],
+        "group": "Independent build"
+      },
+      {
+        "title": "BidCraft",
+        "summary": "Agentic RFP responder: vendors upload tender documents, AI drafts the proposal. Open-source backend.",
+        "tech": [
+          "React Native",
+          "Firebase",
+          "REST"
+        ],
+        "group": "Independent build"
+      },
+      {
+        "title": "Riba Purifier",
+        "summary": "Privacy-first statement parser: decrypts password-protected bank PDFs 100% in the browser.",
+        "tech": [
+          "React",
+          "TypeScript",
+          "PDF.js"
+        ],
+        "group": "Independent build"
+      },
+      {
+        "title": "Umrah Chalo",
+        "summary": "Travel-booking platform for Umrah packages, serving real user traffic in production.",
+        "tech": [
+          "React.js",
+          "MongoDB",
+          "WebSockets"
+        ],
+        "group": "Earlier client work"
+      },
+      {
+        "title": "Your Bag Buddy AI",
+        "summary": "Smart travel checklist generating optimised packing manifests via AI.",
+        "tech": [
+          "Kotlin",
+          "Jetpack Compose"
+        ],
+        "group": "Earlier client work"
+      },
+      {
+        "title": "Arena",
+        "summary": "Community-driven Android architecture for live, real-time gamer messaging.",
+        "tech": [
+          "Firebase sync",
+          "Real-time"
+        ],
+        "group": "Earlier client work"
+      }
+    ],
+    "moreLabel": "More from the lab"
   },
   "ctaBand": {
     "heading": "Have something in mind?",

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { EASE } from "../../lib/motion";
+import data from "../../data/site.json";
 
 const FULL_MS = 1400;
 const QUICK_MS = 450;
@@ -51,8 +52,8 @@ export function Preloader({ onDone }) {
           transition={{ duration: full ? 0.85 : 0.4, ease: EASE }}
         >
           <div className="flex items-center justify-between">
-            <p className="label-mono">SpotNodes</p>
-            <p className="label-mono">Software Engineering Studio</p>
+            <p className="label-mono">{data.brand.name}</p>
+            <p className="label-mono">{data.brand.descriptor}</p>
           </div>
 
           <div className="flex items-end justify-between gap-6">

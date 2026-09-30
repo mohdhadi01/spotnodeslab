@@ -27,8 +27,7 @@ and the UI updates — no component changes needed.
 | `hero.card` | The hero booking card — title, length, note, timezone |
 | `work.featured` | Flagship case-study cards in the filterable grid. `platforms` (mobile/web/web3) drives the filter tabs, `device: "phone"` + `phoneImage` render a phone mockup (fallback: browser frame), `siteUrl` appears in the fake address bar, `status`/`timeline` show as chips. Missing screenshots render a tinted blueprint wireframe. Click → case modal. Note: no external app/store/web links are rendered anywhere in the work section by design (per client decision); an optional `links[]` array is still supported if that ever changes |
 | `work.filters` | The platform filter tabs (id + label) |
-| `work.archive` | Independent product builds grid |
-| `work.earlier` | Earlier client work grid |
+| `work.more` | One merged grid of independent builds + earlier client work; each item has a `group` tag ("Independent build" / "Earlier client work"). Odd counts get a CTA filler cell automatically |
 | `work.sideEngineering` | The compact "Lab notes" list |
 | `ctaBand` | The blue "Have something in mind?" banner |
 | `services.items` | Bento cards — title, tagline, description, stack chips, icon (`globe\|smartphone\|gamepad\|trending`) |

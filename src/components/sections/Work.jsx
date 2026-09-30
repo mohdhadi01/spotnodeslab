@@ -443,9 +443,11 @@ function ProjectCard({ project, onOpen }) {
   );
 }
 
-/* ————— Compact list block (archive / earlier) ————— */
+/* ————— "More from the lab": independent builds + earlier client work,
+   merged into one grid so counts stay even and the block reads as one ————— */
 
-function CompactGrid({ items, label }) {
+function MoreGrid({ items, label }) {
+  const odd = items.length % 2 === 1;
   return (
     <div className="mt-14 md:mt-20">
       <Reveal y={14}>
@@ -462,14 +464,23 @@ function CompactGrid({ items, label }) {
                 </div>
                 <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted">{item.summary}</p>
               </div>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-x-3 gap-y-1">
-                  {item.tech.map((t) => (
-                    <span key={t} className="font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
-                      {t}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {item.group && (
+                  <span
+                    className={`rounded-full px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.14em] ${
+                      item.group === "Independent build"
+                        ? "bg-accent-soft text-accent-strong"
+                        : "bg-surface-2 text-muted"
+                    }`}
+                  >
+                    {item.group}
+                  </span>
+                )}
+                {item.tech.map((t) => (
+                  <span key={t} className="font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
+                    {t}
+                  </span>
+                ))}
                 {item.links?.length > 0 && (
                   <div className="flex gap-2">
                     {item.links.map((l) => {
@@ -493,6 +504,24 @@ function CompactGrid({ items, label }) {
             </div>
           </Reveal>
         ))}
+
+        {/* graceful filler when the count is odd */}
+        {odd && (
+          <Reveal y={14} delay={items.length * 0.04} className="h-full">
+            <button
+              onClick={() => document.querySelector("#connect")?.scrollIntoView({ behavior: "smooth" })}
+              className="group flex h-full w-full flex-col items-start justify-center gap-2 bg-bg p-5 text-left md:p-6"
+            >
+              <span className="font-display text-lg font-medium tracking-tight text-ink">
+                Your project in this list?
+              </span>
+              <span className="inline-flex items-center gap-2 text-xs font-bold text-accent">
+                Book a free intro call
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-45" />
+              </span>
+            </button>
+          </Reveal>
+        )}
       </div>
     </div>
   );
@@ -594,8 +623,7 @@ export function Work() {
           </motion.div>
         </motion.div>
 
-        <CompactGrid items={data.work.archive} label={data.work.archiveLabel} />
-        <CompactGrid items={data.work.earlier} label={data.work.earlierLabel} />
+        <MoreGrid items={data.work.more} label={data.work.moreLabel} />
 
         {/* Side engineering */}
         <div className="mt-14 md:mt-20">
