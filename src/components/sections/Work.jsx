@@ -50,7 +50,8 @@ function PhoneFrame({ children }) {
 
 const WIRE_PATTERNS = ["bars", "rows", "grid", "split"];
 
-function Wirefill({ project }) {
+/* Landscape wireframe for web products (inside a browser frame). */
+function BrowserWirefill({ project }) {
   const pattern = WIRE_PATTERNS[Number(project.index) % WIRE_PATTERNS.length];
   const a = project.accent;
   const soft = `${a}1A`;
@@ -116,10 +117,63 @@ function Wirefill({ project }) {
   );
 }
 
-function Shot({ src, alt, project, className = "" }) {
+/* Portrait app-style wireframe for mobile products (inside the phone frame). */
+function PhoneWirefill({ project }) {
+  const a = project.accent;
+  const soft = `${a}14`;
+  const mid = `${a}30`;
+  const bar = (h, w, extra = {}) => (
+    <span className="rounded-full" style={{ height: h, width: w, background: mid, ...extra }} />
+  );
+
+  return (
+    <div className="flex h-full w-full flex-col gap-[4%] p-[7%]" style={{ background: `linear-gradient(170deg, ${soft}, transparent 70%)` }} aria-hidden="true">
+      {/* app header */}
+      <div className="flex items-center gap-[4%]">
+        <span className="rounded-full" style={{ width: "11%", aspectRatio: "1", background: a, opacity: 0.85 }} />
+        <div className="flex flex-col gap-[5%]" style={{ width: "34%" }}>
+          {bar("8%", "100%")}
+          {bar("7%", "62%")}
+        </div>
+        <span className="ml-auto rounded-full" style={{ width: "9%", aspectRatio: "1", background: mid }} />
+      </div>
+
+      {/* hero card */}
+      <div className="flex flex-col justify-between rounded-xl p-[6%]" style={{ background: a, opacity: 0.9, height: "22%" }}>
+        <span className="rounded-full" style={{ height: "12%", width: "44%", background: "rgba(255,255,255,0.45)" }} />
+        <span className="rounded-full" style={{ height: "18%", width: "66%", background: "rgba(255,255,255,0.85)" }} />
+      </div>
+
+      {/* section label */}
+      {bar("5%", "38%")}
+
+      {/* list rows */}
+      {[0, 1, 2].map((i) => (
+        <div key={i} className="flex items-center gap-[4%]">
+          <span className="shrink-0 rounded-lg" style={{ width: "12%", aspectRatio: "1", background: i === 0 ? a : mid }} />
+          <div className="flex flex-1 flex-col gap-[6%]">
+            {bar("8%", i % 2 ? "72%" : "88%")}
+            {bar("7%", "46%")}
+          </div>
+        </div>
+      ))}
+
+      {/* bottom tab bar */}
+      <div className="mt-auto flex items-center justify-around rounded-xl border-t pt-[4%]" style={{ borderColor: `${a}1F` }}>
+        {[0, 1, 2, 3].map((i) => (
+          <span key={i} className="rounded-full" style={{ width: "9%", aspectRatio: "1", background: i === 0 ? a : mid }} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Shot({ src, alt, project, variant = "browser", className = "" }) {
   const [failed, setFailed] = useState(!src);
   useEffect(() => setFailed(!src), [src]);
-  if (failed) return <Wirefill project={project} />;
+  if (failed) {
+    return variant === "phone" ? <PhoneWirefill project={project} /> : <BrowserWirefill project={project} />;
+  }
   return (
     <img
       src={src}
@@ -133,32 +187,18 @@ function Shot({ src, alt, project, className = "" }) {
 }
 
 /**
- * A project marked `"device": "phone"` renders inside a phone mockup once its
- * portrait `phoneImage` exists in /public/images; until then it gracefully
- * falls back to the browser frame using the landscape screenshot.
+ * Phone projects always render inside the phone mockup; when their portrait
+ * `phoneImage` is missing they show the portrait app wireframe instead.
  */
-function usePhoneVisual(project) {
-  const [ok, setOk] = useState(false);
-  useEffect(() => {
-    setOk(false);
-    if (project.device !== "phone" || !project.phoneImage) return;
-    const img = new Image();
-    img.onload = () => setOk(true);
-    img.onerror = () => setOk(false);
-    img.src = project.phoneImage;
-    return () => {
-      img.onload = null;
-      img.onerror = null;
-    };
-  }, [project.device, project.phoneImage]);
-  return ok;
+function isPhoneProject(project) {
+  return project.device === "phone";
 }
 
 /* ————— Case modal ————— */
 
 function CaseModal({ project, onClose }) {
   const lenis = useLenis();
-  const isPhone = usePhoneVisual(project);
+  const isPhone = isPhoneProject(project);
 
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -208,6 +248,7 @@ function CaseModal({ project, onClose }) {
                   src={project.phoneImage}
                   alt={`${project.title} app screen`}
                   project={project}
+                  variant="phone"
                   className="h-full w-full object-cover object-top"
                 />
               </PhoneFrame>
@@ -305,7 +346,7 @@ function PlatformChip({ platform }) {
 }
 
 function ProjectCard({ project, onOpen }) {
-  const isPhone = usePhoneVisual(project);
+  const isPhone = isPhoneProject(project);
 
   return (
     <motion.article
@@ -322,12 +363,12 @@ function ProjectCard({ project, onOpen }) {
       onKeyDown={(e) => e.key === "Enter" && onOpen(project)}
       aria-label={`Open ${project.title} case study`}
     >
-      {/* Visual — device-appropriate, consistent 16/10 box */}
-      <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-surface-2">
+      {/* Visual — device-appropriate (web: browser mockup, app: phone mockup) */}
+      <div className="relative aspect-[16/9] overflow-hidden border-b border-line bg-surface-2">
         {isPhone ? (
           <div
-            className="absolute inset-0 flex items-center justify-center p-[9%]"
-            style={{ background: `linear-gradient(150deg, ${project.accent}14, transparent 60%)` }}
+            className="absolute inset-0 flex items-center justify-center p-[8%]"
+            style={{ background: `linear-gradient(150deg, ${project.accent}16, transparent 62%)` }}
           >
             <div className="h-full transition-transform duration-500 ease-out group-hover:scale-[1.03]">
               <PhoneFrame>
@@ -335,6 +376,7 @@ function ProjectCard({ project, onOpen }) {
                   src={project.phoneImage}
                   alt={`${project.title} app screen`}
                   project={project}
+                  variant="phone"
                   className="h-full w-full object-cover object-top"
                 />
               </PhoneFrame>
@@ -346,6 +388,7 @@ function ProjectCard({ project, onOpen }) {
               src={project.image}
               alt={`${project.title} interface`}
               project={project}
+              variant="browser"
               className="h-full w-full object-cover object-top will-change-transform transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
           </BrowserFrame>
@@ -353,7 +396,7 @@ function ProjectCard({ project, onOpen }) {
 
         {/* index (bottom-left, clear of the browser chrome) + status (top-right) */}
         <span
-          className="absolute bottom-4 left-4 z-10 flex h-8 w-8 items-center justify-center rounded-lg font-mono text-xs font-medium text-white shadow-[var(--shadow-card)]"
+          className="absolute bottom-3 left-3 z-10 flex h-7 w-7 items-center justify-center rounded-lg font-mono text-[11px] font-medium text-white shadow-[var(--shadow-card)]"
           style={{ backgroundColor: project.accent }}
           aria-hidden="true"
         >
@@ -361,32 +404,32 @@ function ProjectCard({ project, onOpen }) {
         </span>
         {project.status && (
           <span
-            className="absolute right-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-bold backdrop-blur-sm"
+            className="absolute right-3 top-3 z-10 inline-flex max-w-[75%] items-center gap-1.5 truncate rounded-full px-3 py-1.5 text-[11px] font-bold backdrop-blur-sm"
             style={{ background: `${project.accent}E6`, color: "#fff" }}
           >
-            <span className="h-1 w-1 rounded-full bg-white" />
-            {project.status}
+            <span className="h-1 w-1 shrink-0 rounded-full bg-white" />
+            <span className="truncate">{project.status}</span>
           </span>
         )}
       </div>
 
       {/* Info */}
-      <div className="flex flex-1 flex-col p-5 md:p-6">
-        <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-1 flex-col p-4 md:p-5">
+        <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="text-xl font-medium tracking-tight text-ink md:text-2xl">{project.title}</h3>
-            <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-faint">
+            <h3 className="text-lg font-medium tracking-tight text-ink md:text-xl">{project.title}</h3>
+            <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-faint">
               {project.category}
             </p>
           </div>
-          <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-muted transition-all duration-300 group-hover:rotate-45 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
-            <ArrowUpRight className="h-4 w-4" />
+          <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line text-muted transition-all duration-300 group-hover:rotate-45 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
+            <ArrowUpRight className="h-3.5 w-3.5" />
           </span>
         </div>
 
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{project.summary}</p>
+        <p className="mt-2.5 flex-1 text-[13px] leading-relaxed text-muted line-clamp-2">{project.summary}</p>
 
-        <div className="mt-5 flex flex-wrap items-center gap-1.5 border-t border-line pt-4">
+        <div className="mt-4 flex flex-wrap items-center gap-1.5 border-t border-line pt-3.5">
           {project.platforms.map((pl) => (
             <PlatformChip key={pl} platform={pl} />
           ))}
@@ -514,7 +557,7 @@ export function Work() {
         </Reveal>
 
         {/* Filterable grid */}
-        <motion.div layout className="mt-8 grid gap-5 sm:grid-cols-2 md:mt-10 lg:gap-6">
+        <motion.div layout className="mt-8 grid gap-4 sm:grid-cols-2 md:mt-10 lg:gap-5 xl:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {visible.map((project) => (
               <ProjectCard key={project.id} project={project} onOpen={setSelected} />
