@@ -78,7 +78,7 @@ function Scheduler() {
   };
 
   return (
-    <div className="card flex h-full flex-col p-6 md:p-7">
+    <div className="card flex h-full min-w-0 flex-col p-5 md:p-7">
       <div className="flex items-center gap-3.5">
         <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">
           <CalendarRange className="h-5 w-5" />
@@ -117,7 +117,7 @@ function Scheduler() {
             </button>
           </motion.div>
         ) : (
-          <motion.div key="picker" className="mt-6 flex flex-1 flex-col">
+          <motion.div key="picker" className="mt-6 flex min-w-0 flex-1 flex-col">
             {/* Day picker */}
             <p className="label-mono">1 · Pick a day</p>
             <div className="no-scrollbar -mx-1 mt-3 flex gap-2 overflow-x-auto px-1 pb-1">
@@ -258,7 +258,7 @@ function MessageCard() {
   };
 
   return (
-    <div className="card flex h-full flex-col p-6 md:p-7">
+    <div className="card flex h-full min-w-0 flex-col p-5 md:p-7">
       <div className="flex items-center gap-3.5">
         <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">
           <Mail className="h-5 w-5" />
@@ -344,7 +344,7 @@ function DirectLinks() {
   const socials = d.socials?.filter((s) => s.url) ?? [];
   return (
     <Reveal y={16}>
-      <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-line bg-surface px-6 py-5 shadow-[var(--shadow-card)]">
+      <div className="flex flex-col items-start gap-4 rounded-2xl border border-line bg-surface px-5 py-5 shadow-[var(--shadow-card)] md:flex-row md:items-center md:justify-between md:px-6">
         <div className="flex flex-wrap items-center gap-2.5">
           <a
             href={`mailto:${d.email}`}
@@ -393,10 +393,10 @@ export function Connect() {
         <SectionIntro label={data.connect.label} heading={data.connect.heading} sub={data.connect.sub} />
 
         <div className="mt-10 grid gap-5 md:mt-14 lg:grid-cols-2">
-          <Reveal y={22} className="h-full">
+          <Reveal y={22} className="h-full min-w-0">
             <Scheduler />
           </Reveal>
-          <Reveal y={22} delay={0.1} className="h-full">
+          <Reveal y={22} delay={0.1} className="h-full min-w-0">
             <MessageCard />
           </Reveal>
         </div>
