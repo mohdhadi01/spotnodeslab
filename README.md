@@ -46,13 +46,17 @@ update the path in `site.json` (or just overwrite the file keeping the same
 name). Team photos are `/akhilesh.png` and `/hadi.jpeg` in `public/`;
 résumé PDFs live there too.
 
-### Contact form
+### Contact form + scheduler (zero config)
 
-Submissions POST to a Google Apps Script endpoint. Set it in `.env`:
+Both the message form and the intro-call scheduler forward submissions
+straight to the inbox in `connect.direct.email` via FormSubmit — no signup,
+no API key, no backend, no .env.
 
-```
-VITE_GOOGLE_APPS_SCRIPT_URL="https://script.google.com/macros/s/.../exec"
-```
+One-time activation: the FIRST submission ever makes FormSubmit email that
+inbox a confirmation link. Click "Activate Form" in that email once, and
+every later submission arrives as a nicely formatted email (subject lines:
+"Intro call request: ..." / "New project enquiry (...)") with the sender's
+name, email and message so you can reply directly.
 
 ### ⚠️ Update before going live
 

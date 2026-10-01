@@ -18,11 +18,24 @@ import { nextOpenDays } from "../../lib/schedule";
 const field =
   "w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink placeholder:text-faint focus:outline-none transition-all duration-300 focus:border-accent focus:ring-4 focus:ring-accent-soft disabled:opacity-50";
 
-async function postToSheet(payload) {
-  const scriptUrl = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL;
-  if (!scriptUrl) throw new Error("Missing VITE_GOOGLE_APPS_SCRIPT_URL in .env");
-  const body = new URLSearchParams(payload);
-  await fetch(scriptUrl, { method: "POST", mode: "no-cors", body });
+/**
+ * Zero-config submission: forwards straight to the studio inbox via
+ * FormSubmit (no signup, no API key, no backend). One-time activation —
+ * the first ever submission emails spotnodeslab@gmail.com a confirmation
+ * link; clicking it once turns on forwarding forever.
+ */
+async function postToInbox(payload) {
+  const to = data.connect.direct.email;
+  const res = await fetch(`https://formsubmit.com/ajax/${to}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ _captcha: "false", _template: "table", ...payload }),
+  });
+  if (!res.ok) throw new Error("FormSubmit network error");
+  const out = await res.json().catch(() => null);
+  if (!out || String(out.success) !== "true") {
+    throw new Error(out?.message || "FormSubmit rejected the submission");
+  }
 }
 
 /* ————— Scheduler card ————— */
@@ -63,12 +76,12 @@ function Scheduler() {
     setError("");
     setStatus("loading");
     try {
-      await postToSheet({
-        type: "schedule-call",
+      await postToInbox({
+        _subject: `Intro call request: ${days[dayIdx].full} at ${slot} (${form.name})`,
         name: form.name,
         email: form.email,
-        message: `${form.note || "(not provided)"}\nSlot: ${days[dayIdx].full}, ${slot} ${cfg.timezone}`,
-        slot: `${days[dayIdx].iso} ${slot}`,
+        topic: form.note || "(not provided)",
+        requested_slot: `${days[dayIdx].full}, ${slot} ${cfg.timezone}`,
       });
       setStatus("done");
     } catch {
@@ -247,7 +260,12 @@ function MessageCard() {
     }
     setStatus("loading");
     try {
-      await postToSheet({ type: "message", name: form.name, email: form.email, message: form.message });
+      await postToInbox({
+        _subject: `New project enquiry (${form.name})`,
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      });
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
