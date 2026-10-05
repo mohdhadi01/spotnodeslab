@@ -26,7 +26,7 @@ const field =
  */
 async function postToInbox(payload) {
   const to = data.connect.direct.email;
-  const res = await fetch(`https://formsubmit.com/ajax/${to}`, {
+  const res = await fetch(`https://formsubmit.co/ajax/${to}`, {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({ _captcha: "false", _template: "table", ...payload }),
